@@ -15,7 +15,7 @@ const subjects = {
     {id:"aqaaidIslam", urdu:"عقائد اسلام", eng:"Aqaaid Islam", total:90},
     {id:"masail", urdu:"مسائل شریعت", eng:"Masail Shariyat", total:100},
     {id:"seerat", urdu:"سیرت النبی ﷺ", eng:"Seerat-un-Nabi", total:100},
-    {id:"akhlaq", urdu:"اخلاق و تعلیم", eng:"Akhlaq o Taleem", total:100},
+    {id:"akhlaq", urdu:"اخلاقی تعلیم", eng:"Akhlaqi Taleem", total:100},
     {id:"arabi", urdu:"عربی زبان", eng:"Arabi Zaban", total:100},
     {id:"urduWritten", urdu:"اردو تحریری", eng:"Urdu Tehreeri", total:50}
   ]
@@ -33,7 +33,7 @@ function buildRows(section) {
 
     rows += `
       <tr>
-        <td><strong class="urdu">${sub.urdu}</strong><br><small>${sub.eng}</small></td>
+        <td><strong>${sub.urdu}</strong><br><small>${sub.eng}</small></td>
         <td>${sub.total}</td>
         <td>${obtained}</td>
       </tr>
@@ -62,19 +62,18 @@ let result = obtainedTotal >= 400 ? "PASS" : "FAIL";
 document.getElementById("reportArea").innerHTML = `
 <div class="report">
 
-<div class="logo-area">
-<img src="logo.png">
+<div class="header-top">
+  <div class="logo-side">
+    <img src="logo.png">
+  </div>
+
+  <div class="title-area">
+    <div class="title-eng">MAKTAB FATIMAH LIL BANAT</div>
+    <div class="title-urdu">مکتب فاطمہ للبنات</div>
+  </div>
 </div>
 
-<div class="header-strip">
-MAKTAB FATIMAH LIL BANAT
-</div>
-
-<div class="sub-header urdu">
-مکتب فاطمہ للبنات
-</div>
-
-<div class="sub-header">
+<div class="exam-line">
 ANNUAL EXAMINATION - ${examYear.value}<br>
 سالانہ امتحان - ${examYear.value}
 </div>
@@ -83,8 +82,8 @@ ANNUAL EXAMINATION - ${examYear.value}<br>
 <div><strong>طالبہ کا نام:</strong> ${studentName.value}</div>
 <div><strong>Student Name:</strong> ${studentName.value}</div>
 
-<div><strong>والد کا نام:</strong> ${fatherName.value}</div>
-<div><strong>Father Name:</strong> ${fatherName.value}</div>
+<div><strong>والدیت:</strong> ${fatherName.value}</div>
+<div><strong>Waldiyyat (Guardian):</strong> ${fatherName.value}</div>
 
 <div><strong>درجہ:</strong> ${className.value}</div>
 <div><strong>Class:</strong> ${className.value}</div>
@@ -125,13 +124,13 @@ ${tehreeriRows}
 </div>
 
 <div class="signature-area">
-<div class="signature-box">
+<div>
 _________________<br>
 ناظمہ مکتب<br>
 Nazima Maktab
 </div>
 
-<div class="signature-box">
+<div>
 _________________<br>
 صدر مدرسہ<br>
 Sadr-e-Mudarris
@@ -143,7 +142,7 @@ Sadr-e-Mudarris
 </div>
 `;
 
-/* ===== AUTO CLEAR FORM ===== */
+/* AUTO CLEAR FORM */
 
 document.querySelectorAll(".form-section input").forEach(input => input.value = "");
 
