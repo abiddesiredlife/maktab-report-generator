@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مکتب رپورٹ کارڈ جنریٹر</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         :root {
             --navy: #001f3f;
-            --gold: #c9a347;
+            --gold: #d4af37;
             --ivory: #fdfaf2;
             --dark: #222;
         }
@@ -71,49 +71,67 @@
             margin: 18px 0 8px;
         }
         button:hover { background: #003366; }
+
         .report {
             display: none;
             width: 210mm;
             min-height: 297mm;
             margin: 30px auto;
-            padding: 15mm 18mm 20mm; /* Reduced padding to fit better */
+            padding: 15mm 18mm 20mm;
             background: var(--ivory);
             border: 3px double var(--gold);
-            box-shadow: 0 0 25px rgba(201,163,71,0.2);
+            box-shadow: 0 0 25px rgba(212,175,55,0.2);
             box-sizing: border-box;
             font-size: 13pt;
             color: #111;
             position: relative;
         }
+
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10mm; /* Reduced vertical space */
+            margin-bottom: 10mm;
         }
+
         .logo-container {
             flex-shrink: 0;
         }
+
         .logo {
-            max-width: 100px; /* Smaller logo to save space */
+            max-width: 100px;
             height: auto;
         }
+
         .title-block {
             text-align: center;
             flex: 1;
             margin: 0 10mm;
+            background: linear-gradient(to bottom, #001f3f, #002b55);
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
         }
+
         .main-title {
-            font-size: 24pt;
-            color: var(--navy);
-            margin: 0;
+            font-family: 'Cinzel', serif;
+            font-size: 26pt;
             font-weight: 700;
+            color: var(--gold);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            margin: 0;
+            letter-spacing: 1.2px;
         }
+
         .sub-title {
-            font-size: 18pt;
-            color: var(--navy);
-            margin: 4px 0 0;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 22pt;
+            font-weight: 700;
+            color: var(--gold);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            margin: 6px 0 0;
         }
+
         .info {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -121,22 +139,26 @@
             margin-bottom: 20px;
             font-size: 13pt;
         }
+
         .info p {
             margin: 0;
             padding: 6px 10px;
-            background: rgba(201,163,71,0.05);
+            background: rgba(212,175,55,0.05);
             border-radius: 5px;
-            border: 1px solid rgba(201,163,71,0.15);
+            border: 1px solid rgba(212,175,55,0.15);
         }
+
         .subjects {
             display: flex;
             justify-content: space-between;
             gap: 18px;
             margin: 20px 0;
         }
+
         .block {
             flex: 1;
         }
+
         .block h3 {
             text-align: center;
             color: white;
@@ -146,41 +168,48 @@
             border-radius: 6px 6px 0 0;
             font-size: 14pt;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 11.5pt;
         }
+
         th, td {
             border: 1px solid #b0a070;
             padding: 7px 6px;
             text-align: center;
         }
+
         th {
             background: var(--navy);
             color: white;
         }
+
         .subject-col {
             background: #fff8e8;
             text-align: right;
             padding-right: 10px;
             font-weight: 600;
         }
+
         .totals {
             margin-top: 20px;
             padding: 15px;
-            background: rgba(201,163,71,0.07);
+            background: rgba(212,175,55,0.07);
             border: 1px solid var(--gold);
             border-radius: 8px;
             font-size: 13.5pt;
             font-weight: bold;
             text-align: center;
         }
+
         .result {
             font-size: 15pt;
             color: var(--navy);
             margin-top: 12px;
         }
+
         .signatures {
             margin-top: 40px;
             display: flex;
@@ -189,19 +218,23 @@
             font-weight: bold;
             color: var(--navy);
         }
+
         .sig {
             width: 45%;
             text-align: center;
         }
+
         .sig-line {
             border-top: 1.5px solid var(--gold);
             margin: 35px 0 8px;
         }
+
         #pdfButton {
             text-align: center;
             margin: 30px 0;
             display: none;
         }
+
         #pdfButton button {
             padding: 12px 45px;
             font-size: 1.15rem;
@@ -211,7 +244,8 @@
             border-radius: 8px;
             cursor: pointer;
         }
-        #pdfButton button:hover { background: #d4b366; }
+
+        #pdfButton button:hover { background: #e6c04e; }
 
         @media print {
             body * { visibility: hidden; }
@@ -282,7 +316,7 @@
                 <div class="main-title">MAKTAB FATIMAH LIL BANAT</div>
                 <div class="sub-title">مکتب فاطمہ للبنات</div>
             </div>
-            <div style="width:100px;"></div> <!-- Spacer for balance -->
+            <div style="width:100px;"></div>
         </div>
 
         <div class="info">
@@ -399,7 +433,6 @@
             const element = document.getElementById('report');
             element.style.display = 'block';
 
-            // Wait longer for logo + fonts to load fully
             await new Promise(r => setTimeout(r, 1500));
 
             const canvas = await html2canvas(element, {
@@ -421,13 +454,12 @@
                 format: 'a4'
             });
 
-            const pdfWidth = pdf.internal.pageSize.getWidth();  // 210
-            const pdfHeight = pdf.internal.pageSize.getHeight(); // 297
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = pdf.internal.pageSize.getHeight();
 
             const canvasWidth = canvas.width;
             const canvasHeight = canvas.height;
 
-            // Calculate scale to fit entire content in A4 (prevent cut-off)
             const ratio = Math.min(pdfWidth / canvasWidth, pdfHeight / canvasHeight);
             const imgW = canvasWidth * ratio;
             const imgH = canvasHeight * ratio;
