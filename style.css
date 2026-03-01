@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: serif;
   background: #f2f2f2;
   margin: 0;
   padding: 10px;
@@ -8,38 +8,32 @@ body {
 .form-section {
   background: white;
   padding: 20px;
-  margin-bottom: 20px;
   max-width: 600px;
-}
-
-label {
-  font-weight: bold;
-  display: block;
-  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 input {
-  padding: 5px;
+  display: block;
   width: 250px;
-  margin-bottom: 10px;
+  margin: 6px 0;
+  padding: 5px;
 }
 
 button {
-  padding: 8px 16px;
+  padding: 8px 15px;
   background: #0b1f3a;
   color: white;
   border: none;
-  cursor: pointer;
 }
 
-/* A4 FIXED */
+/* ===== STRICT A4 ===== */
 
 .report {
   width: 210mm;
   height: 297mm;
   background: white;
   margin: auto;
-  padding: 18mm;
+  padding: 15mm;
   box-sizing: border-box;
   border: 8px solid #b68a2a;
   overflow: hidden;
@@ -47,19 +41,8 @@ button {
 
 /* HEADER */
 
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo-side img {
-  width: 75px;
-}
-
-.title-area {
+.header {
   text-align: center;
-  flex-grow: 1;
 }
 
 .title-eng {
@@ -71,31 +54,44 @@ button {
   font-size: 18px;
 }
 
-.exam-line {
-  text-align: center;
-  margin-top: 6px;
+.exam-title {
+  margin-top: 5px;
   font-weight: bold;
 }
 
-/* STUDENT GRID */
+/* STUDENT INFO */
 
-.student-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 12px;
-  gap: 6px;
+.student-info {
+  margin-top: 10px;
   font-size: 13px;
+  line-height: 1.6;
 }
 
-/* TABLE */
+/* SIDE BY SIDE TABLES */
 
-.section-title {
-  margin-top: 12px;
-  background: #0b1f3a;
-  color: white;
-  padding: 5px;
+.tables-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.table-box {
+  width: 48%;
+}
+
+.section-head {
   text-align: center;
-  font-size: 13px;
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.taqreeri-head {
+  background: #0b1f3a;
+}
+
+.tehreeri-head {
+  background: #b68a2a;
 }
 
 table {
@@ -105,35 +101,26 @@ table {
 }
 
 th, td {
-  border: 1px solid #888;
+  border: 1px solid #555;
   padding: 4px;
   text-align: center;
 }
 
-th {
-  background: #0b1f3a;
-  color: white;
-}
-
-/* TOTAL */
-
 .total-box {
-  margin-top: 8px;
+  margin-top: 10px;
   padding: 6px;
-  border: 2px solid #0b1f3a;
+  border: 2px solid #000;
   font-size: 13px;
 }
 
-/* SIGNATURE */
-
-.signature-area {
-  margin-top: 18px;
+.signature {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
 }
 
 @media print {
-  body { background: white; }
   .form-section { display: none; }
+  body { background: white; }
 }
