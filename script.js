@@ -33,7 +33,7 @@ function buildRows(section) {
 
     rows += `
       <tr>
-        <td><strong>${sub.urdu}</strong><br><small>${sub.eng}</small></td>
+        <td><strong class="urdu">${sub.urdu}</strong><br><small>${sub.eng}</small></td>
         <td>${sub.total}</td>
         <td>${obtained}</td>
       </tr>
@@ -47,16 +47,30 @@ let tehreeriRows = buildRows(subjects.tehreeri);
 
 let percentage = ((obtainedTotal / grandTotal) * 100).toFixed(2);
 
+/* ===== GRADE SYSTEM ===== */
+
+let grade = "";
+if (percentage >= 90) grade = "A+";
+else if (percentage >= 80) grade = "A";
+else if (percentage >= 70) grade = "B";
+else if (percentage >= 60) grade = "C";
+else if (percentage >= 50) grade = "D";
+else grade = "F";
+
 let result = obtainedTotal >= 400 ? "PASS" : "FAIL";
 
 document.getElementById("reportArea").innerHTML = `
 <div class="report">
 
+<div class="logo-area">
+<img src="logo.png">
+</div>
+
 <div class="header-strip">
 MAKTAB FATIMAH LIL BANAT
 </div>
 
-<div class="sub-header">
+<div class="sub-header urdu">
 مکتب فاطمہ للبنات
 </div>
 
@@ -106,6 +120,7 @@ ${tehreeriRows}
 کل نمبر: ${grandTotal} | Total Marks: ${grandTotal}<br>
 حاصل کردہ نمبر: ${obtainedTotal} | Marks Obtained: ${obtainedTotal}<br>
 فیصد: ${percentage}% | Percentage: ${percentage}%<br>
+گریڈ: ${grade} | Grade: ${grade}<br>
 نتیجہ: ${result}
 </div>
 
@@ -123,6 +138,13 @@ Sadr-e-Mudarris
 </div>
 </div>
 
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
 </div>
 `;
+
+/* ===== AUTO CLEAR FORM ===== */
+
+document.querySelectorAll(".form-section input").forEach(input => input.value = "");
+
 }
