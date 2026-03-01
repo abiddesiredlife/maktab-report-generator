@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مکتب رپورٹ کارڈ جنریٹر</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         :root {
             --navy: #001f3f;
@@ -194,6 +195,7 @@
         #pdfButton {
             text-align: center;
             margin: 40px 0;
+            display: none;
         }
         #pdfButton button {
             padding: 14px 50px;
@@ -268,7 +270,7 @@
 
     <div id="report" class="report">
         <div class="logo-container">
-            <img src="https://raw.githubusercontent.com/abiddesiredlife/maktab-report-generator/main/logo.png" alt="لوگو" class="logo">
+            <img src="logo.png" alt="لوگو" class="logo">
         </div>
         <div class="title-block">
             <div class="main-title">MAKTAB FATIMAH LIL BANAT</div>
@@ -329,7 +331,7 @@
         </div>
     </div>
 
-    <div id="pdfButton" style="display:none;">
+    <div id="pdfButton">
         <button onclick="downloadPDF()">PDF ڈاؤن لوڈ کریں</button>
     </div>
 
@@ -345,7 +347,7 @@
                          aqaedIslam:90,masail:100,seerat:100,akhlaqi:100,arabi:100,urduTah:50};
 
             fields.forEach(f => {
-                if (f.includes('Year') || f.includes('Name') || f.includes('class') || f.includes('roll')) {
+                if (['examYear','academicYear','studentName','fatherName','className','rollNo'].includes(f)) {
                     document.getElementById('r_'+f).textContent = document.getElementById(f).value || '';
                 } else {
                     let val = parseFloat(document.getElementById(f).value) || 0;
@@ -364,7 +366,7 @@
             let percentage = (totalObtained / 1000 * 100).toFixed(2);
             let grade = percentage >= 90 ? 'A+' : percentage >= 80 ? 'A' : percentage >= 70 ? 'B' :
                         percentage >= 60 ? 'C' : percentage >= 50 ? 'D' : 'F';
-            let result = percentage >= 40 ? 'کامیاب' : 'ناکام';  // adjust pass % if needed
+            let result = percentage >= 33 ? 'کامیاب' : 'ناکام';  // Adjusted to 33 as per initial spec
 
             document.getElementById('r_totalObtained').textContent = totalObtained;
             document.getElementById('r_percentage').textContent = percentage;
@@ -374,26 +376,41 @@
             document.getElementById('report').style.display = 'block';
             document.getElementById('pdfButton').style.display = 'block';
 
-            // Small delay for rendering
             setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 300);
         }
 
-        function downloadPDF() {
+        async function downloadPDF() {
             const element = document.getElementById('report');
-            const opt = {
-                margin: 0,
-                filename: 'رپورٹ_کارڈ.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: false,
-                    scrollY: -window.scrollY,
-                    logging: false
-                },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            html2pdf().set(opt).from(element).save();
+            element.style.display = 'block';
+
+            // Delay for full rendering, including logo load
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            const canvas = await html2canvas(element, {
+                scale: 1.8,  // Reduced for stability
+                useCORS: true,
+                allowTaint: false,
+                logging: false,
+                scrollY: -window.scrollY,
+                windowWidth: document.documentElement.clientWidth,
+                windowHeight: document.documentElement.clientHeight
+            });
+
+            const imgData = canvas.toDataURL('image/jpeg', 0.98);
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = pdf.internal.pageSize.getHeight();
+            const imgWidth = canvas.width * (pdfWidth / canvas.width);
+            const imgHeight = canvas.height * (pdfWidth / canvas.width);
+
+            pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, imgHeight);
+            pdf.save('رپورٹ_کارڈ.pdf');
         }
     </script>
 </body>
