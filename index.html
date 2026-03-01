@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Maktab Report Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div class="form-section">
+
+<h2>Annual Examination Setup</h2>
+
+<input type="text" id="examYear" placeholder="Exam Year (e.g. 2026)">
+<input type="text" id="studentName" placeholder="Student Name">
+<input type="text" id="fatherName" placeholder="Father Name">
+<input type="text" id="className" placeholder="Class">
+<input type="text" id="rollNo" placeholder="Roll No">
+<input type="text" id="academicYear" placeholder="Academic Year">
+
+<h3>Enter Obtained Marks Only</h3>
+
+<!-- TAQREERI -->
+<h4>Mazameen Taqreeri</h4>
+
+<input type="number" id="nazira">
+<input type="number" id="hifzSurah">
+<input type="number" id="hifzHadees">
+<input type="number" id="masnoon">
+<input type="number" id="aqaaidOral">
+<input type="number" id="urduOral">
+
+<!-- TEHREERI -->
+<h4>Mazameen Tehreeri</h4>
+
+<input type="number" id="aqaaidIslam">
+<input type="number" id="masail">
+<input type="number" id="seerat">
+<input type="number" id="akhlaq">
+<input type="number" id="arabi">
+<input type="number" id="urduWritten">
+
+<button onclick="generateReport()">Generate Report</button>
+
+</div>
+
+<div id="reportArea"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
