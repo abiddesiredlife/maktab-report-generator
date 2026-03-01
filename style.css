@@ -5,8 +5,6 @@ body {
   padding: 10px;
 }
 
-/* FORM */
-
 .form-section {
   background: white;
   padding: 20px;
@@ -16,14 +14,14 @@ body {
 
 label {
   font-weight: bold;
-  margin-top: 8px;
   display: block;
+  margin-top: 8px;
 }
 
 input {
-  margin: 5px 0 10px 0;
   padding: 5px;
   width: 250px;
+  margin-bottom: 10px;
 }
 
 button {
@@ -34,18 +32,17 @@ button {
   cursor: pointer;
 }
 
-/* REPORT - STRICT A4 */
+/* A4 FIXED */
 
 .report {
   width: 210mm;
   height: 297mm;
   background: white;
   margin: auto;
-  padding: 20mm;
+  padding: 18mm;
   box-sizing: border-box;
   border: 8px solid #b68a2a;
   overflow: hidden;
-  page-break-after: avoid;
 }
 
 /* HEADER */
@@ -57,7 +54,7 @@ button {
 }
 
 .logo-side img {
-  width: 80px;
+  width: 75px;
 }
 
 .title-area {
@@ -66,51 +63,50 @@ button {
 }
 
 .title-eng {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .title-urdu {
-  font-size: 20px;
-  font-family: serif;
+  font-size: 18px;
 }
 
 .exam-line {
   text-align: center;
-  margin-top: 8px;
+  margin-top: 6px;
   font-weight: bold;
 }
 
-/* STUDENT INFO */
+/* STUDENT GRID */
 
 .student-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 15px;
+  margin-top: 12px;
   gap: 6px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* TABLE */
 
 .section-title {
-  margin-top: 15px;
+  margin-top: 12px;
   background: #0b1f3a;
   color: white;
-  padding: 6px;
+  padding: 5px;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 th, td {
   border: 1px solid #888;
-  padding: 5px;
+  padding: 4px;
   text-align: center;
 }
 
@@ -119,31 +115,25 @@ th {
   color: white;
 }
 
-/* TOTAL BOX */
+/* TOTAL */
 
 .total-box {
-  margin-top: 10px;
-  padding: 8px;
+  margin-top: 8px;
+  padding: 6px;
   border: 2px solid #0b1f3a;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* SIGNATURE */
 
 .signature-area {
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 12px;
 }
 
-/* PRINT */
-
 @media print {
-  body {
-    background: white;
-  }
-  .form-section {
-    display: none;
-  }
+  body { background: white; }
+  .form-section { display: none; }
 }
