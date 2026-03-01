@@ -5,22 +5,19 @@
 <title>Maktab Report Generator</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="form-section">
 
 <h2>سالانہ امتحان سیٹ اپ / Annual Examination Setup</h2>
 
-<!-- BASIC DETAILS -->
-
 <label>امتحانی سال / Exam Year</label>
-<input type="text" id="examYear" placeholder="2026">
+<input type="text" id="examYear">
 
 <label>طالبہ کا نام / Student Name</label>
 <input type="text" id="studentName">
 
-<label>والد کا نام / Father Name</label>
+<label>والدیت / Waldiyyat (Guardian)</label>
 <input type="text" id="fatherName">
 
 <label>درجہ / Class</label>
@@ -36,62 +33,55 @@
 
 <h3>حاصل کردہ نمبر درج کریں / Enter Obtained Marks Only</h3>
 
-<!-- TAQREERI SECTION -->
-
 <h4>مضامین تقریری / Mazameen Taqreeri</h4>
 
 <label>ناظرہ قرآن (100)</label>
-<input type="number" id="nazira" min="0" max="100">
+<input type="number" id="nazira">
 
 <label>حفظ سورہ (100)</label>
-<input type="number" id="hifzSurah" min="0" max="100">
+<input type="number" id="hifzSurah">
 
 <label>حفظ حدیث (100)</label>
-<input type="number" id="hifzHadees" min="0" max="100">
+<input type="number" id="hifzHadees">
 
 <label>مسنون دعائیں (100)</label>
-<input type="number" id="masnoon" min="0" max="100">
+<input type="number" id="masnoon">
 
 <label>عقائد (10)</label>
-<input type="number" id="aqaaidOral" min="0" max="10">
+<input type="number" id="aqaaidOral">
 
 <label>اردو تقریری (50)</label>
-<input type="number" id="urduOral" min="0" max="50">
+<input type="number" id="urduOral">
 
 <hr>
-
-<!-- TEHREERI SECTION -->
 
 <h4>مضامین تحریری / Mazameen Tehreeri</h4>
 
 <label>عقائد اسلام (90)</label>
-<input type="number" id="aqaaidIslam" min="0" max="90">
+<input type="number" id="aqaaidIslam">
 
 <label>مسائل شریعت (100)</label>
-<input type="number" id="masail" min="0" max="100">
+<input type="number" id="masail">
 
 <label>سیرت النبی ﷺ (100)</label>
-<input type="number" id="seerat" min="0" max="100">
+<input type="number" id="seerat">
 
-<label>اخلاق و تعلیم (100)</label>
-<input type="number" id="akhlaq" min="0" max="100">
+<label>اخلاقی تعلیم (100)</label>
+<input type="number" id="akhlaq">
 
 <label>عربی زبان (100)</label>
-<input type="number" id="arabi" min="0" max="100">
+<input type="number" id="arabi">
 
 <label>اردو تحریری (50)</label>
-<input type="number" id="urduWritten" min="0" max="50">
+<input type="number" id="urduWritten">
 
-<br><br>
-
+<br>
 <button onclick="generateReport()">Generate Report</button>
 
 </div>
 
-<!-- REPORT OUTPUT -->
 <div id="reportArea"></div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
