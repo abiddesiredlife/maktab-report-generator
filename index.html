@@ -1,63 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Maktab Report</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مکتب رپورٹ جنریٹر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-
-<div class="form-section">
-
-<h2>سالانہ امتحان سیٹ اپ</h2>
-
-<label>امتحانی سال</label>
-<input type="text" id="examYear" value="2026">
-
-<label>طالبہ کا نام</label>
-<input type="text" id="studentName">
-
-<label>والدیت</label>
-<input type="text" id="guardianName">
-
-<label>درجہ</label>
-<input type="text" id="className">
-
-<label>رول نمبر</label>
-<input type="text" id="rollNo">
-
-<label>تعلیمی سال</label>
-<input type="text" id="academicYear" value="2025-26">
-
-<hr>
-
-<h3>حاصل کردہ نمبر درج کریں</h3>
-
-<h4>مضامین تقریری</h4>
-
-<input type="number" id="nazira" placeholder="ناظرہ قرآن (100)">
-<input type="number" id="hifzSurah" placeholder="حفظ سورہ (100)">
-<input type="number" id="hifzHadees" placeholder="حفظ حدیث (100)">
-<input type="number" id="masnoon" placeholder="مسنون دعائیں (100)">
-<input type="number" id="aqaaidOral" placeholder="عقائد (10)">
-<input type="number" id="urduOral" placeholder="اردو تقریری (50)">
-
-<h4>مضامین تحریری</h4>
-
-<input type="number" id="aqaaidIslam" placeholder="عقائد اسلام (90)">
-<input type="number" id="masail" placeholder="مسائل شریعت (100)">
-<input type="number" id="seerat" placeholder="سیرت النبی ﷺ (100)">
-<input type="number" id="akhlaq" placeholder="اخلاقی تعلیم (100)">
-<input type="number" id="arabi" placeholder="عربی زبان (100)">
-<input type="number" id="urduWritten" placeholder="اردو تحریری (50)">
-
-<br>
-<button onclick="generateReport()">رپورٹ تیار کریں</button>
-
-</div>
-
-<div id="reportArea"></div>
-
-<script src="script.js"></script>
+    <div class="container">
+        <h1>مکتب فاطمہ للبنات رپورٹ جنریٹر</h1>
+        <form id="studentForm">
+            <label for="examYear">امتحانی سال:</label>
+            <input type="text" id="examYear" value="2026">
+            <label for="academicYear">تعلیمی سال:</label>
+            <input type="text" id="academicYear" value="2025-26">
+            <label for="studentName">طالبہ کا نام:</label>
+            <input type="text" id="studentName">
+            <label for="fatherName">والدیت / زوجیت:</label>
+            <input type="text" id="fatherName">
+            <label for="className">درجہ:</label>
+            <input type="text" id="className">
+            <label for="rollNo">رول نمبر:</label>
+            <input type="text" id="rollNo">
+            <h2>مضامین تقریری</h2>
+            <label for="nazra">ناظرہ قرآن:</label>
+            <input type="number" id="nazra" min="0" max="100">
+            <label for="hifzSurah">حفظ سورہ:</label>
+            <input type="number" id="hifzSurah" min="0" max="100">
+            <label for="hifzHadith">حفظ حدیث:</label>
+            <input type="number" id="hifzHadith" min="0" max="100">
+            <label for="masnoonDua">مسنون دعائیں:</label>
+            <input type="number" id="masnoonDua" min="0" max="100">
+            <label for="aqaedTaq">عقائد:</label>
+            <input type="number" id="aqaedTaq" min="0" max="10">
+            <label for="urduTaq">اردو تقریری:</label>
+            <input type="number" id="urduTaq" min="0" max="50">
+            <h2>مضامین تحریری</h2>
+            <label for="aqaedIslam">عقائد اسلام:</label>
+            <input type="number" id="aqaedIslam" min="0" max="90">
+            <label for="masail">مسائل شریعت:</label>
+            <input type="number" id="masail" min="0" max="100">
+            <label for="seerat">سیرت النبی ﷺ:</label>
+            <input type="number" id="seerat" min="0" max="100">
+            <label for="akhlaqi">اخلاقی تعلیم:</label>
+            <input type="number" id="akhlaqi" min="0" max="100">
+            <label for="arabi">عربی زبان:</label>
+            <input type="number" id="arabi" min="0" max="100">
+            <label for="urduTah">اردو تحریری:</label>
+            <input type="number" id="urduTah" min="0" max="50">
+            <button type="button" onclick="generateReport()">رپورٹ تیار کریں</button>
+        </form>
+        <div id="report" class="report"></div>
+        <div id="pdfButton" style="display:none; text-align:center; margin-top:20px;">
+            <button onclick="downloadPDF()">PDF ڈاؤن لوڈ کریں</button>
+        </div>
+    </div>
 </body>
 </html>
