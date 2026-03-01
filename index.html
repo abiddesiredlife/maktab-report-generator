@@ -2,81 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Maktab Report Generator</title>
+<title>Maktab Report</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="form-section">
 
-<h2>سالانہ امتحان سیٹ اپ / Annual Examination Setup</h2>
+<h2>سالانہ امتحان سیٹ اپ</h2>
 
-<label>امتحانی سال / Exam Year</label>
-<input type="text" id="examYear">
+<label>امتحانی سال</label>
+<input type="text" id="examYear" value="2026">
 
-<label>طالبہ کا نام / Student Name</label>
+<label>طالبہ کا نام</label>
 <input type="text" id="studentName">
 
-<label>والدیت / Waldiyyat (Guardian)</label>
-<input type="text" id="fatherName">
+<label>والدیت</label>
+<input type="text" id="guardianName">
 
-<label>درجہ / Class</label>
+<label>درجہ</label>
 <input type="text" id="className">
 
-<label>رول نمبر / Roll No</label>
+<label>رول نمبر</label>
 <input type="text" id="rollNo">
 
-<label>تعلیمی سال / Academic Year</label>
-<input type="text" id="academicYear">
+<label>تعلیمی سال</label>
+<input type="text" id="academicYear" value="2025-26">
 
 <hr>
 
-<h3>حاصل کردہ نمبر درج کریں / Enter Obtained Marks Only</h3>
+<h3>حاصل کردہ نمبر درج کریں</h3>
 
-<h4>مضامین تقریری / Mazameen Taqreeri</h4>
+<h4>مضامین تقریری</h4>
 
-<label>ناظرہ قرآن (100)</label>
-<input type="number" id="nazira">
+<input type="number" id="nazira" placeholder="ناظرہ قرآن (100)">
+<input type="number" id="hifzSurah" placeholder="حفظ سورہ (100)">
+<input type="number" id="hifzHadees" placeholder="حفظ حدیث (100)">
+<input type="number" id="masnoon" placeholder="مسنون دعائیں (100)">
+<input type="number" id="aqaaidOral" placeholder="عقائد (10)">
+<input type="number" id="urduOral" placeholder="اردو تقریری (50)">
 
-<label>حفظ سورہ (100)</label>
-<input type="number" id="hifzSurah">
+<h4>مضامین تحریری</h4>
 
-<label>حفظ حدیث (100)</label>
-<input type="number" id="hifzHadees">
-
-<label>مسنون دعائیں (100)</label>
-<input type="number" id="masnoon">
-
-<label>عقائد (10)</label>
-<input type="number" id="aqaaidOral">
-
-<label>اردو تقریری (50)</label>
-<input type="number" id="urduOral">
-
-<hr>
-
-<h4>مضامین تحریری / Mazameen Tehreeri</h4>
-
-<label>عقائد اسلام (90)</label>
-<input type="number" id="aqaaidIslam">
-
-<label>مسائل شریعت (100)</label>
-<input type="number" id="masail">
-
-<label>سیرت النبی ﷺ (100)</label>
-<input type="number" id="seerat">
-
-<label>اخلاقی تعلیم (100)</label>
-<input type="number" id="akhlaq">
-
-<label>عربی زبان (100)</label>
-<input type="number" id="arabi">
-
-<label>اردو تحریری (50)</label>
-<input type="number" id="urduWritten">
+<input type="number" id="aqaaidIslam" placeholder="عقائد اسلام (90)">
+<input type="number" id="masail" placeholder="مسائل شریعت (100)">
+<input type="number" id="seerat" placeholder="سیرت النبی ﷺ (100)">
+<input type="number" id="akhlaq" placeholder="اخلاقی تعلیم (100)">
+<input type="number" id="arabi" placeholder="عربی زبان (100)">
+<input type="number" id="urduWritten" placeholder="اردو تحریری (50)">
 
 <br>
-<button onclick="generateReport()">Generate Report</button>
+<button onclick="generateReport()">رپورٹ تیار کریں</button>
 
 </div>
 
