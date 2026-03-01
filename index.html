@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Maktab Report Generator</title>
@@ -10,41 +10,85 @@
 
 <div class="form-section">
 
-<h2>Annual Examination Setup</h2>
+<h2>سالانہ امتحان سیٹ اپ / Annual Examination Setup</h2>
 
-<input type="text" id="examYear" placeholder="Exam Year (e.g. 2026)">
-<input type="text" id="studentName" placeholder="Student Name">
-<input type="text" id="fatherName" placeholder="Father Name">
-<input type="text" id="className" placeholder="Class">
-<input type="text" id="rollNo" placeholder="Roll No">
-<input type="text" id="academicYear" placeholder="Academic Year">
+<!-- BASIC DETAILS -->
 
-<h3>Enter Obtained Marks Only</h3>
+<label>امتحانی سال / Exam Year</label>
+<input type="text" id="examYear" placeholder="2026">
 
-<!-- TAQREERI -->
-<h4>Mazameen Taqreeri</h4>
+<label>طالبہ کا نام / Student Name</label>
+<input type="text" id="studentName">
 
-<input type="number" id="nazira">
-<input type="number" id="hifzSurah">
-<input type="number" id="hifzHadees">
-<input type="number" id="masnoon">
-<input type="number" id="aqaaidOral">
-<input type="number" id="urduOral">
+<label>والد کا نام / Father Name</label>
+<input type="text" id="fatherName">
 
-<!-- TEHREERI -->
-<h4>Mazameen Tehreeri</h4>
+<label>درجہ / Class</label>
+<input type="text" id="className">
 
-<input type="number" id="aqaaidIslam">
-<input type="number" id="masail">
-<input type="number" id="seerat">
-<input type="number" id="akhlaq">
-<input type="number" id="arabi">
-<input type="number" id="urduWritten">
+<label>رول نمبر / Roll No</label>
+<input type="text" id="rollNo">
+
+<label>تعلیمی سال / Academic Year</label>
+<input type="text" id="academicYear">
+
+<hr>
+
+<h3>حاصل کردہ نمبر درج کریں / Enter Obtained Marks Only</h3>
+
+<!-- TAQREERI SECTION -->
+
+<h4>مضامین تقریری / Mazameen Taqreeri</h4>
+
+<label>ناظرہ قرآن (100)</label>
+<input type="number" id="nazira" min="0" max="100">
+
+<label>حفظ سورہ (100)</label>
+<input type="number" id="hifzSurah" min="0" max="100">
+
+<label>حفظ حدیث (100)</label>
+<input type="number" id="hifzHadees" min="0" max="100">
+
+<label>مسنون دعائیں (100)</label>
+<input type="number" id="masnoon" min="0" max="100">
+
+<label>عقائد (10)</label>
+<input type="number" id="aqaaidOral" min="0" max="10">
+
+<label>اردو تقریری (50)</label>
+<input type="number" id="urduOral" min="0" max="50">
+
+<hr>
+
+<!-- TEHREERI SECTION -->
+
+<h4>مضامین تحریری / Mazameen Tehreeri</h4>
+
+<label>عقائد اسلام (90)</label>
+<input type="number" id="aqaaidIslam" min="0" max="90">
+
+<label>مسائل شریعت (100)</label>
+<input type="number" id="masail" min="0" max="100">
+
+<label>سیرت النبی ﷺ (100)</label>
+<input type="number" id="seerat" min="0" max="100">
+
+<label>اخلاق و تعلیم (100)</label>
+<input type="number" id="akhlaq" min="0" max="100">
+
+<label>عربی زبان (100)</label>
+<input type="number" id="arabi" min="0" max="100">
+
+<label>اردو تحریری (50)</label>
+<input type="number" id="urduWritten" min="0" max="50">
+
+<br><br>
 
 <button onclick="generateReport()">Generate Report</button>
 
 </div>
 
+<!-- REPORT OUTPUT -->
 <div id="reportArea"></div>
 
 <script src="script.js"></script>
