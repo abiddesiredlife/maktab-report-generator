@@ -32,24 +32,14 @@
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
-        h1 {
+        h1, .subtitle {
             color: var(--navy);
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 8px;
         }
-        .subtitle {
-            text-align: center;
-            color: var(--navy);
-            font-size: 1.4rem;
-            margin: 0 0 25px;
-        }
-        label {
-            display: block;
-            margin: 12px 0 4px;
-            font-weight: 700;
-            color: var(--navy);
-        }
+        h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .subtitle { font-size: 1.4rem; margin: 0 0 25px; }
+
+        label { display: block; margin: 12px 0 4px; font-weight: 700; color: var(--navy); }
         input {
             width: 100%;
             padding: 9px 11px;
@@ -77,7 +67,7 @@
             width: 210mm;
             min-height: 297mm;
             margin: 30px auto;
-            padding: 15mm 18mm 20mm;
+            padding: 12mm 16mm 18mm; /* Slightly reduced to give more room for title */
             background: var(--ivory);
             border: 3px double var(--gold);
             box-shadow: 0 0 25px rgba(212,175,55,0.2);
@@ -89,146 +79,143 @@
 
         .header {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
-            margin-bottom: 12mm;
+            margin-bottom: 8mm; /* Reduced to prevent cut-off */
         }
 
         .logo-container {
             flex-shrink: 0;
+            margin-top: 4px;
         }
 
         .logo {
-            max-width: 90px;
+            max-width: 85px;
             height: auto;
         }
 
         .title-block {
             flex: 1;
             text-align: center;
-            margin: 0 12mm;
+            margin: 0 8mm;
             background: linear-gradient(to right, #001f3f, #003366);
-            padding: 14px 24px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(212,175,55,0.35);
+            padding: 10px 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
         }
 
         .main-title {
             font-family: 'Cinzel', serif;
-            font-size: 28pt;
+            font-size: 26pt; /* Slightly smaller to prevent wrapping/cut */
             font-weight: 700;
             color: var(--gold);
-            text-shadow: 1.5px 1.5px 5px rgba(0,0,0,0.6);
+            text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.5);
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .sub-title {
             font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 24pt;
+            font-size: 22pt;
             font-weight: 700;
             color: var(--gold);
-            text-shadow: 1.2px 1.2px 4px rgba(0,0,0,0.5);
-            margin: 8px 0 0;
+            text-shadow: 1.2px 1.2px 3px rgba(0,0,0,0.4);
+            margin: 6px 0 0;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px 20px;
-            margin-bottom: 20px;
-            font-size: 13pt;
+            gap: 8px 16px;
+            margin-bottom: 18px;
+            font-size: 12.5pt;
         }
 
         .info p {
             margin: 0;
-            padding: 6px 10px;
-            background: rgba(212,175,55,0.05);
-            border-radius: 5px;
-            border: 1px solid rgba(212,175,55,0.15);
+            padding: 5px 8px;
+            background: rgba(212,175,55,0.04);
+            border-radius: 4px;
+            border: 1px solid rgba(212,175,55,0.12);
         }
 
         .subjects {
             display: flex;
             justify-content: space-between;
-            gap: 18px;
-            margin: 20px 0;
+            gap: 16px;
+            margin: 18px 0;
         }
 
-        .block {
-            flex: 1;
-        }
+        .block { flex: 1; }
 
         .block h3 {
             text-align: center;
             color: white;
             background: var(--navy);
-            padding: 9px;
-            margin: 0 0 8px;
-            border-radius: 6px 6px 0 0;
-            font-size: 14pt;
+            padding: 8px;
+            margin: 0 0 6px;
+            border-radius: 5px 5px 0 0;
+            font-size: 13.5pt;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 11.5pt;
+            font-size: 11pt;
         }
 
         th, td {
             border: 1px solid #b0a070;
-            padding: 7px 6px;
+            padding: 6px 5px;
             text-align: center;
         }
 
-        th {
-            background: var(--navy);
-            color: white;
-        }
+        th { background: var(--navy); color: white; }
 
         .subject-col {
             background: #fff8e8;
             text-align: right;
-            padding-right: 10px;
+            padding-right: 8px;
             font-weight: 600;
         }
 
         .totals {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(212,175,55,0.07);
+            margin-top: 18px;
+            padding: 12px;
+            background: rgba(212,175,55,0.06);
             border: 1px solid var(--gold);
-            border-radius: 8px;
-            font-size: 13.5pt;
+            border-radius: 7px;
+            font-size: 13pt;
             font-weight: bold;
             text-align: center;
         }
 
         .result {
-            font-size: 15pt;
+            font-size: 14.5pt;
             color: var(--navy);
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         .signatures {
-            margin-top: 40px;
+            margin-top: 35px;
             display: flex;
             justify-content: space-between;
-            font-size: 12.5pt;
+            font-size: 12pt;
             font-weight: bold;
             color: var(--navy);
         }
 
-        .sig {
-            width: 45%;
-            text-align: center;
-        }
+        .sig { width: 45%; text-align: center; }
 
         .sig-line {
             border-top: 1.5px solid var(--gold);
-            margin: 35px 0 8px;
+            margin: 30px 0 6px;
         }
 
         #pdfButton {
@@ -254,11 +241,11 @@
             .report, .report * { visibility: visible; }
             .report {
                 position: fixed;
-                top: 0; left: 0;
+                inset: 0;
                 width: 100%;
                 height: auto;
                 margin: 0;
-                padding: 15mm 18mm 20mm;
+                padding: 12mm 16mm 18mm;
                 border: none;
                 box-shadow: none;
                 background: white !important;
@@ -318,7 +305,7 @@
                 <div class="main-title">MAKTAB FATIMAH LIL BANAT</div>
                 <div class="sub-title">مکتب فاطمہ للبنات</div>
             </div>
-            <div style="width:90px;"></div>
+            <div style="width:85px;"></div>
         </div>
 
         <div class="info">
@@ -435,7 +422,9 @@
             const element = document.getElementById('report');
             element.style.display = 'block';
 
-            await new Promise(r => setTimeout(r, 1500));
+            // Extra delay + force reflow
+            element.offsetHeight; 
+            await new Promise(r => setTimeout(r, 1800));
 
             const canvas = await html2canvas(element, {
                 scale: 1.5,
@@ -443,8 +432,16 @@
                 allowTaint: false,
                 logging: false,
                 scrollY: -window.scrollY,
-                windowWidth: element.offsetWidth,
-                windowHeight: element.offsetHeight
+                windowWidth: element.scrollWidth,
+                windowHeight: element.scrollHeight,
+                onclone: (clonedDoc) => {
+                    // Ensure no wrapping in cloned doc
+                    const titles = clonedDoc.querySelectorAll('.main-title, .sub-title');
+                    titles.forEach(t => {
+                        t.style.whiteSpace = 'nowrap';
+                        t.style.overflow = 'visible';
+                    });
+                }
             });
 
             const imgData = canvas.toDataURL('image/jpeg', 0.92);
@@ -459,12 +456,9 @@
             const pdfWidth = pdf.internal.pageSize.getWidth();
             const pdfHeight = pdf.internal.pageSize.getHeight();
 
-            const canvasWidth = canvas.width;
-            const canvasHeight = canvas.height;
-
-            const ratio = Math.min(pdfWidth / canvasWidth, pdfHeight / canvasHeight);
-            const imgW = canvasWidth * ratio;
-            const imgH = canvasHeight * ratio;
+            let ratio = Math.min(pdfWidth / canvas.width, pdfHeight / canvas.height * 1.02); // Slight overscale tolerance
+            const imgW = canvas.width * ratio;
+            const imgH = canvas.height * ratio;
 
             pdf.addImage(imgData, 'JPEG', 0, 0, imgW, imgH);
 
