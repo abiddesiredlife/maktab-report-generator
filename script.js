@@ -1,102 +1,96 @@
 function generateReport() {
 
-const subjects = [
-  {id:"nazira", urdu:"ناظرہ قرآن", eng:"Nazira Quran", total:100},
-  {id:"hifzSurah", urdu:"حفظ سورہ", eng:"Hifz Surah", total:100},
-  {id:"hifzHadees", urdu:"حفظ حدیث", eng:"Hifz Hadees", total:100},
-  {id:"masnoon", urdu:"مسنون دعائیں", eng:"Masnoon Dua", total:100},
-  {id:"aqaaidOral", urdu:"عقائد", eng:"Aqaaid (Oral)", total:10},
-  {id:"urduOral", urdu:"اردو تقریری", eng:"Urdu Taqreeri", total:50},
-  {id:"aqaaidIslam", urdu:"عقائد اسلام", eng:"Aqaaid Islam", total:90},
-  {id:"masail", urdu:"مسائل شریعت", eng:"Masail Shariyat", total:100},
-  {id:"seerat", urdu:"سیرت النبی ﷺ", eng:"Seerat-un-Nabi", total:100},
-  {id:"akhlaq", urdu:"اخلاقی تعلیم", eng:"Akhlaqi Taleem", total:100},
-  {id:"arabi", urdu:"عربی زبان", eng:"Arabi Zaban", total:100},
-  {id:"urduWritten", urdu:"اردو تحریری", eng:"Urdu Tehreeri", total:50}
+const taqreeri = [
+  ["ناظرہ قرآن",100,"nazira"],
+  ["حفظ سورہ",100,"hifzSurah"],
+  ["حفظ حدیث",100,"hifzHadees"],
+  ["مسنون دعائیں",100,"masnoon"],
+  ["عقائد",10,"aqaaidOral"],
+  ["اردو تقریری",50,"urduOral"]
 ];
 
-let obtainedTotal = 0;
+const tehreeri = [
+  ["عقائد اسلام",90,"aqaaidIslam"],
+  ["مسائل شریعت",100,"masail"],
+  ["سیرت النبی ﷺ",100,"seerat"],
+  ["اخلاقی تعلیم",100,"akhlaq"],
+  ["عربی زبان",100,"arabi"],
+  ["اردو تحریری",50,"urduWritten"]
+];
 
-let rows = subjects.map(sub => {
-  let val = parseInt(document.getElementById(sub.id).value) || 0;
-  obtainedTotal += val;
+let totalObtained = 0;
 
-  return `
-  <tr>
-    <td><b>${sub.urdu}</b><br>${sub.eng}</td>
-    <td>${sub.total}</td>
-    <td>${val}</td>
-  </tr>`;
-}).join("");
+function buildRows(list) {
+  return list.map(sub => {
+    let val = parseInt(document.getElementById(sub[2]).value) || 0;
+    totalObtained += val;
+    return `<tr><td>${sub[0]}</td><td>${sub[1]}</td><td>${val}</td></tr>`;
+  }).join("");
+}
 
-let grandTotal = 1000;
+let taqRows = buildRows(taqreeri);
+let tehRows = buildRows(tehreeri);
 
-let percentage = (obtainedTotal / grandTotal) * 100;
-let percentageFixed = percentage.toFixed(2);
+let totalMarks = 1000;
+let percent = (totalObtained / totalMarks) * 100;
+let percentFixed = percent.toFixed(2);
 
-let grade = "";
-if (percentage >= 90) grade = "A+";
-else if (percentage >= 80) grade = "A";
-else if (percentage >= 70) grade = "B";
-else if (percentage >= 60) grade = "C";
-else if (percentage >= 50) grade = "D";
-else grade = "F";
+let grade = percent >= 90 ? "A+" :
+            percent >= 80 ? "A" :
+            percent >= 70 ? "B" :
+            percent >= 60 ? "C" :
+            percent >= 50 ? "D" : "F";
 
-let result = obtainedTotal >= 400 ? "PASS" : "FAIL";
+let result = percent >= 40 ? "کامیاب" : "ناکام";
 
 document.getElementById("reportArea").innerHTML = `
 <div class="report">
 
-<div class="header-top">
-  <div class="logo-side">
-    <img src="logo.png">
-  </div>
-  <div class="title-area">
-    <div class="title-eng">MAKTAB FATIMAH LIL BANAT</div>
-    <div class="title-urdu">مکتب فاطمہ للبنات</div>
-  </div>
+<div class="header">
+<div class="title-eng">MAKTAB FATIMAH LIL BANAT</div>
+<div class="title-urdu">مکتب فاطمہ للبنات</div>
+<div class="exam-title">سالانہ امتحان - ${examYear.value}</div>
 </div>
 
-<div class="exam-line">
-ANNUAL EXAMINATION - ${examYear.value}<br>
-سالانہ امتحان - ${examYear.value}
+<div class="student-info">
+طالبہ: ${studentName.value} <br>
+والدیت: ${guardianName.value} <br>
+درجہ: ${className.value} <br>
+رول نمبر: ${rollNo.value} <br>
+تعلیمی سال: ${academicYear.value}
 </div>
 
-<div class="student-grid">
-<div><b>طالبہ:</b> ${studentName.value}</div>
-<div><b>Student:</b> ${studentName.value}</div>
-<div><b>والدیت:</b> ${fatherName.value}</div>
-<div><b>Guardian:</b> ${fatherName.value}</div>
-<div><b>درجہ:</b> ${className.value}</div>
-<div><b>Class:</b> ${className.value}</div>
-<div><b>رول نمبر:</b> ${rollNo.value}</div>
-<div><b>Roll No:</b> ${rollNo.value}</div>
-<div><b>تعلیمی سال:</b> ${academicYear.value}</div>
-<div><b>Academic Year:</b> ${academicYear.value}</div>
-</div>
+<div class="tables-wrapper">
 
-<div class="section-title">مضامین / Subjects</div>
-
+<div class="table-box">
+<div class="section-head taqreeri-head">مضامین تقریری</div>
 <table>
-<tr>
-<th>مضمون<br>Subject</th>
-<th>کل نمبر<br>Total</th>
-<th>حاصل کردہ نمبر<br>Obtained</th>
-</tr>
-${rows}
+<tr><th>مضمون</th><th>کل نمبر</th><th>حاصل کردہ</th></tr>
+${taqRows}
 </table>
+</div>
+
+<div class="table-box">
+<div class="section-head tehreeri-head">مضامین تحریری</div>
+<table>
+<tr><th>مضمون</th><th>کل نمبر</th><th>حاصل کردہ</th></tr>
+${tehRows}
+</table>
+</div>
+
+</div>
 
 <div class="total-box">
-کل نمبر: ${grandTotal} | Total: ${grandTotal}<br>
-حاصل کردہ نمبر: ${obtainedTotal} | Obtained: ${obtainedTotal}<br>
-فیصد: ${percentageFixed}% | Percentage: ${percentageFixed}%<br>
-گریڈ: ${grade} | Grade: ${grade}<br>
+کل نمبر: ${totalMarks} <br>
+حاصل کردہ نمبر: ${totalObtained} <br>
+فیصد: ${percentFixed}% <br>
+درجہ: ${grade} <br>
 نتیجہ: ${result}
 </div>
 
-<div class="signature-area">
-<div>_________________<br>ناظمہ مکتب<br>Nazima</div>
-<div>_________________<br>صدر مدرسہ<br>Sadr</div>
+<div class="signature">
+<div>_________________<br>ناظمہ مکتب</div>
+<div>_________________<br>صدر مدرسہ</div>
 </div>
 
 </div>
