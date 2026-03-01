@@ -22,7 +22,7 @@
             color: var(--dark);
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         .container {
             max-width: 900px;
@@ -35,99 +35,104 @@
         h1 {
             color: var(--navy);
             text-align: center;
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             margin-bottom: 8px;
         }
         .subtitle {
             text-align: center;
             color: var(--navy);
-            font-size: 1.6rem;
-            margin: 0 0 30px;
+            font-size: 1.4rem;
+            margin: 0 0 25px;
         }
         label {
             display: block;
-            margin: 14px 0 5px;
+            margin: 12px 0 4px;
             font-weight: 700;
             color: var(--navy);
         }
         input {
             width: 100%;
-            padding: 10px 12px;
-            margin-bottom: 10px;
+            padding: 9px 11px;
+            margin-bottom: 8px;
             border: 1px solid #d0c8b0;
             border-radius: 6px;
-            font-size: 1.05rem;
+            font-size: 1rem;
             direction: rtl;
         }
         button {
             background: var(--navy);
             color: white;
-            padding: 12px;
+            padding: 11px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             width: 100%;
-            margin: 20px 0 10px;
-            transition: 0.3s;
+            margin: 18px 0 8px;
         }
         button:hover { background: #003366; }
         .report {
             display: none;
             width: 210mm;
             min-height: 297mm;
-            margin: 40px auto;
-            padding: 18mm 20mm 25mm;
+            margin: 30px auto;
+            padding: 15mm 18mm 20mm; /* Reduced padding to fit better */
             background: var(--ivory);
-            border: 4px double var(--gold);
-            box-shadow: 0 0 30px rgba(201,163,71,0.25);
+            border: 3px double var(--gold);
+            box-shadow: 0 0 25px rgba(201,163,71,0.2);
             box-sizing: border-box;
-            font-size: 13.2pt;
+            font-size: 13pt;
             color: #111;
             position: relative;
         }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10mm; /* Reduced vertical space */
+        }
         .logo-container {
-            text-align: center;
-            margin-bottom: 18px;
+            flex-shrink: 0;
         }
         .logo {
-            max-width: 160px;
+            max-width: 100px; /* Smaller logo to save space */
             height: auto;
         }
         .title-block {
             text-align: center;
-            margin: 0 0 28px;
+            flex: 1;
+            margin: 0 10mm;
         }
         .main-title {
-            font-size: 28pt;
+            font-size: 24pt;
             color: var(--navy);
             margin: 0;
             font-weight: 700;
         }
         .sub-title {
-            font-size: 22pt;
+            font-size: 18pt;
             color: var(--navy);
-            margin: 10px 0 0;
+            margin: 4px 0 0;
         }
         .info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px 24px;
-            margin-bottom: 35px;
-            font-size: 13.5pt;
+            gap: 10px 20px;
+            margin-bottom: 20px;
+            font-size: 13pt;
         }
         .info p {
             margin: 0;
-            padding: 8px 12px;
-            background: rgba(201,163,71,0.06);
-            border-radius: 6px;
-            border: 1px solid rgba(201,163,71,0.2);
+            padding: 6px 10px;
+            background: rgba(201,163,71,0.05);
+            border-radius: 5px;
+            border: 1px solid rgba(201,163,71,0.15);
         }
         .subjects {
             display: flex;
             justify-content: space-between;
-            gap: 24px;
-            margin: 35px 0;
+            gap: 18px;
+            margin: 20px 0;
         }
         .block {
             flex: 1;
@@ -136,19 +141,19 @@
             text-align: center;
             color: white;
             background: var(--navy);
-            padding: 12px;
-            margin: 0 0 12px;
-            border-radius: 8px 8px 0 0;
-            font-size: 15.5pt;
+            padding: 9px;
+            margin: 0 0 8px;
+            border-radius: 6px 6px 0 0;
+            font-size: 14pt;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 12pt;
+            font-size: 11.5pt;
         }
         th, td {
             border: 1px solid #b0a070;
-            padding: 9px 7px;
+            padding: 7px 6px;
             text-align: center;
         }
         th {
@@ -158,29 +163,29 @@
         .subject-col {
             background: #fff8e8;
             text-align: right;
-            padding-right: 14px;
+            padding-right: 10px;
             font-weight: 600;
         }
         .totals {
-            margin-top: 35px;
-            padding: 20px;
-            background: rgba(201,163,71,0.08);
-            border: 2px solid var(--gold);
-            border-radius: 10px;
-            font-size: 14.5pt;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(201,163,71,0.07);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            font-size: 13.5pt;
             font-weight: bold;
             text-align: center;
         }
         .result {
-            font-size: 17pt;
+            font-size: 15pt;
             color: var(--navy);
-            margin-top: 18px;
+            margin-top: 12px;
         }
         .signatures {
-            margin-top: 60px;
+            margin-top: 40px;
             display: flex;
             justify-content: space-between;
-            font-size: 13.5pt;
+            font-size: 12.5pt;
             font-weight: bold;
             color: var(--navy);
         }
@@ -189,17 +194,17 @@
             text-align: center;
         }
         .sig-line {
-            border-top: 2px solid var(--gold);
-            margin: 45px 0 12px;
+            border-top: 1.5px solid var(--gold);
+            margin: 35px 0 8px;
         }
         #pdfButton {
             text-align: center;
-            margin: 40px 0;
+            margin: 30px 0;
             display: none;
         }
         #pdfButton button {
-            padding: 14px 50px;
-            font-size: 1.25rem;
+            padding: 12px 45px;
+            font-size: 1.15rem;
             background: var(--gold);
             color: var(--navy);
             border: none;
@@ -217,7 +222,7 @@
                 width: 100%;
                 height: auto;
                 margin: 0;
-                padding: 18mm 20mm 25mm;
+                padding: 15mm 18mm 20mm;
                 border: none;
                 box-shadow: none;
                 background: white !important;
@@ -249,7 +254,7 @@
         <label for="rollNo">رول نمبر</label>
         <input type="text" id="rollNo">
 
-        <h2 style="color:var(--navy); text-align:center; margin:35px 0 15px;">مضامین تقریری</h2>
+        <h2 style="color:var(--navy); text-align:center; margin:25px 0 12px;">مضامین تقریری</h2>
         <label for="nazra">ناظرہ قرآن (100)</label><input type="number" id="nazra" min="0">
         <label for="hifzSurah">حفظ سورہ (100)</label><input type="number" id="hifzSurah" min="0">
         <label for="hifzHadith">حفظ حدیث (100)</label><input type="number" id="hifzHadith" min="0">
@@ -257,7 +262,7 @@
         <label for="aqaedTaq">عقائد (10)</label><input type="number" id="aqaedTaq" min="0">
         <label for="urduTaq">اردو تقریری (50)</label><input type="number" id="urduTaq" min="0">
 
-        <h2 style="color:var(--navy); text-align:center; margin:35px 0 15px;">مضامین تحریری</h2>
+        <h2 style="color:var(--navy); text-align:center; margin:25px 0 12px;">مضامین تحریری</h2>
         <label for="aqaedIslam">عقائد اسلام (90)</label><input type="number" id="aqaedIslam" min="0">
         <label for="masail">مسائل شریعت (100)</label><input type="number" id="masail" min="0">
         <label for="seerat">سیرت النبی ﷺ (100)</label><input type="number" id="seerat" min="0">
@@ -269,12 +274,15 @@
     </div>
 
     <div id="report" class="report">
-        <div class="logo-container">
-            <img src="logo.png" alt="لوگو" class="logo">
-        </div>
-        <div class="title-block">
-            <div class="main-title">MAKTAB FATIMAH LIL BANAT</div>
-            <div class="sub-title">مکتب فاطمہ للبنات</div>
+        <div class="header">
+            <div class="logo-container">
+                <img src="logo.png" alt="لوگو" class="logo">
+            </div>
+            <div class="title-block">
+                <div class="main-title">MAKTAB FATIMAH LIL BANAT</div>
+                <div class="sub-title">مکتب فاطمہ للبنات</div>
+            </div>
+            <div style="width:100px;"></div> <!-- Spacer for balance -->
         </div>
 
         <div class="info">
@@ -343,30 +351,38 @@
 
             let marks = {};
             let invalid = false;
-            const max = {nazra:100,hifzSurah:100,hifzHadith:100,masnoonDua:100,aqaedTaq:10,urduTaq:50,
-                         aqaedIslam:90,masail:100,seerat:100,akhlaqi:100,arabi:100,urduTah:50};
+            const maxMarks = {nazra:100,hifzSurah:100,hifzHadith:100,masnoonDua:100,aqaedTaq:10,urduTaq:50,
+                              aqaedIslam:90,masail:100,seerat:100,akhlaqi:100,arabi:100,urduTah:50};
 
             fields.forEach(f => {
-                if (['examYear','academicYear','studentName','fatherName','className','rollNo'].includes(f)) {
-                    document.getElementById('r_'+f).textContent = document.getElementById(f).value || '';
-                } else {
-                    let val = parseFloat(document.getElementById(f).value) || 0;
-                    if (val > max[f]) {
-                        alert(`غلط: "${f}" میں زیادہ سے زیادہ ${max[f]} نمبر درج کریں۔`);
+                const input = document.getElementById(f);
+                const val = ['examYear','academicYear','studentName','fatherName','className','rollNo'].includes(f) 
+                    ? input.value.trim() 
+                    : parseFloat(input.value) || 0;
+
+                if (!['examYear','academicYear','studentName','fatherName','className','rollNo'].includes(f)) {
+                    if (val > maxMarks[f]) {
+                        alert(`غلط نمبر: "${f}" میں زیادہ سے زیادہ ${maxMarks[f]} ہیں۔`);
                         invalid = true;
+                        return;
                     }
                     marks[f] = val;
-                    document.getElementById('r_'+f).textContent = val;
+                    document.getElementById('r_' + f).textContent = val;
+                } else {
+                    document.getElementById('r_' + f).textContent = val || '—';
                 }
             });
 
             if (invalid) return;
 
-            let totalObtained = Object.values(marks).reduce((a,b)=>a+b,0);
+            let totalObtained = Object.values(marks).reduce((a, b) => a + b, 0);
             let percentage = (totalObtained / 1000 * 100).toFixed(2);
-            let grade = percentage >= 90 ? 'A+' : percentage >= 80 ? 'A' : percentage >= 70 ? 'B' :
-                        percentage >= 60 ? 'C' : percentage >= 50 ? 'D' : 'F';
-            let result = percentage >= 33 ? 'کامیاب' : 'ناکام';  // Adjusted to 33 as per initial spec
+            let grade = percentage >= 90 ? 'A+' :
+                        percentage >= 80 ? 'A' :
+                        percentage >= 70 ? 'B' :
+                        percentage >= 60 ? 'C' :
+                        percentage >= 50 ? 'D' : 'F';
+            let result = percentage >= 33 ? 'کامیاب' : 'ناکام';
 
             document.getElementById('r_totalObtained').textContent = totalObtained;
             document.getElementById('r_percentage').textContent = percentage;
@@ -376,27 +392,28 @@
             document.getElementById('report').style.display = 'block';
             document.getElementById('pdfButton').style.display = 'block';
 
-            setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 300);
+            setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 400);
         }
 
         async function downloadPDF() {
             const element = document.getElementById('report');
             element.style.display = 'block';
 
-            // Delay for full rendering, including logo load
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Wait longer for logo + fonts to load fully
+            await new Promise(r => setTimeout(r, 1500));
 
             const canvas = await html2canvas(element, {
-                scale: 1.8,  // Reduced for stability
+                scale: 1.5,
                 useCORS: true,
                 allowTaint: false,
                 logging: false,
                 scrollY: -window.scrollY,
-                windowWidth: document.documentElement.clientWidth,
-                windowHeight: document.documentElement.clientHeight
+                windowWidth: element.offsetWidth,
+                windowHeight: element.offsetHeight
             });
 
-            const imgData = canvas.toDataURL('image/jpeg', 0.98);
+            const imgData = canvas.toDataURL('image/jpeg', 0.92);
+
             const { jsPDF } = window.jspdf;
             const pdf = new jsPDF({
                 orientation: 'portrait',
@@ -404,12 +421,19 @@
                 format: 'a4'
             });
 
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = pdf.internal.pageSize.getHeight();
-            const imgWidth = canvas.width * (pdfWidth / canvas.width);
-            const imgHeight = canvas.height * (pdfWidth / canvas.width);
+            const pdfWidth = pdf.internal.pageSize.getWidth();  // 210
+            const pdfHeight = pdf.internal.pageSize.getHeight(); // 297
 
-            pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, imgHeight);
+            const canvasWidth = canvas.width;
+            const canvasHeight = canvas.height;
+
+            // Calculate scale to fit entire content in A4 (prevent cut-off)
+            const ratio = Math.min(pdfWidth / canvasWidth, pdfHeight / canvasHeight);
+            const imgW = canvasWidth * ratio;
+            const imgH = canvasHeight * ratio;
+
+            pdf.addImage(imgData, 'JPEG', 0, 0, imgW, imgH);
+
             pdf.save('رپورٹ_کارڈ.pdf');
         }
     </script>
