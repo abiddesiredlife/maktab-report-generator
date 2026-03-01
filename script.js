@@ -1,35 +1,48 @@
 function generateReport() {
 
-const taqreeri = [
-  ["ناظرہ قرآن",100,"nazira"],
-  ["حفظ سورہ",100,"hifzSurah"],
-  ["حفظ حدیث",100,"hifzHadees"],
-  ["مسنون دعائیں",100,"masnoon"],
-  ["عقائد",10,"aqaaidOral"],
-  ["اردو تقریری",50,"urduOral"]
-];
-
-const tehreeri = [
-  ["عقائد اسلام",90,"aqaaidIslam"],
-  ["مسائل شریعت",100,"masail"],
-  ["سیرت النبی ﷺ",100,"seerat"],
-  ["اخلاقی تعلیم",100,"akhlaq"],
-  ["عربی زبان",100,"arabi"],
-  ["اردو تحریری",50,"urduWritten"]
+const subjects = [
+  {name:"ناظرہ قرآن", max:100, id:"nazira"},
+  {name:"حفظ سورہ", max:100, id:"hifzSurah"},
+  {name:"حفظ حدیث", max:100, id:"hifzHadees"},
+  {name:"مسنون دعائیں", max:100, id:"masnoon"},
+  {name:"عقائد", max:10, id:"aqaaidOral"},
+  {name:"اردو تقریری", max:50, id:"urduOral"},
+  {name:"عقائد اسلام", max:90, id:"aqaaidIslam"},
+  {name:"مسائل شریعت", max:100, id:"masail"},
+  {name:"سیرت النبی ﷺ", max:100, id:"seerat"},
+  {name:"اخلاقی تعلیم", max:100, id:"akhlaq"},
+  {name:"عربی زبان", max:100, id:"arabi"},
+  {name:"اردو تحریری", max:50, id:"urduWritten"}
 ];
 
 let totalObtained = 0;
+let rows = "";
 
-function buildRows(list) {
-  return list.map(sub => {
-    let val = parseInt(document.getElementById(sub[2]).value) || 0;
-    totalObtained += val;
-    return `<tr><td>${sub[0]}</td><td>${sub[1]}</td><td>${val}</td></tr>`;
-  }).join("");
+/* ===== VALIDATION LOOP ===== */
+
+for (let sub of subjects) {
+
+  let input = document.getElementById(sub.id);
+  let value = parseInt(input.value) || 0;
+
+  if (value > sub.max) {
+    alert(`"${sub.name}" میں زیادہ سے زیادہ نمبر ${sub.max} ہیں`);
+    input.value = "";
+    input.focus();
+    return; // STOP REPORT
+  }
+
+  totalObtained += value;
+
+  rows += `
+  <tr>
+    <td>${sub.name}</td>
+    <td>${sub.max}</td>
+    <td>${value}</td>
+  </tr>`;
 }
 
-let taqRows = buildRows(taqreeri);
-let tehRows = buildRows(tehreeri);
+/* ===== CALCULATIONS ===== */
 
 let totalMarks = 1000;
 let percent = (totalObtained / totalMarks) * 100;
@@ -43,38 +56,32 @@ let grade = percent >= 90 ? "A+" :
 
 let result = percent >= 40 ? "کامیاب" : "ناکام";
 
+/* ===== BUILD REPORT ===== */
+
 document.getElementById("reportArea").innerHTML = `
 <div class="report">
 
 <div class="header">
 <div class="title-eng">MAKTAB FATIMAH LIL BANAT</div>
 <div class="title-urdu">مکتب فاطمہ للبنات</div>
-<div class="exam-title">سالانہ امتحان - ${examYear.value}</div>
+<div class="exam-title">سالانہ امتحان - ${document.getElementById("examYear").value}</div>
 </div>
 
 <div class="student-info">
-طالبہ: ${studentName.value} <br>
-والدیت: ${guardianName.value} <br>
-درجہ: ${className.value} <br>
-رول نمبر: ${rollNo.value} <br>
-تعلیمی سال: ${academicYear.value}
+طالبہ: ${document.getElementById("studentName").value} <br>
+والدیت: ${document.getElementById("guardianName").value} <br>
+درجہ: ${document.getElementById("className").value} <br>
+رول نمبر: ${document.getElementById("rollNo").value} <br>
+تعلیمی سال: ${document.getElementById("academicYear").value}
 </div>
 
 <div class="tables-wrapper">
 
 <div class="table-box">
-<div class="section-head taqreeri-head">مضامین تقریری</div>
+<div class="section-head taqreeri-head">مضامین</div>
 <table>
 <tr><th>مضمون</th><th>کل نمبر</th><th>حاصل کردہ</th></tr>
-${taqRows}
-</table>
-</div>
-
-<div class="table-box">
-<div class="section-head tehreeri-head">مضامین تحریری</div>
-<table>
-<tr><th>مضمون</th><th>کل نمبر</th><th>حاصل کردہ</th></tr>
-${tehRows}
+${rows}
 </table>
 </div>
 
