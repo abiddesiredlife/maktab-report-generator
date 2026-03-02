@@ -67,7 +67,7 @@
             width: 210mm;
             min-height: 297mm;
             margin: 30px auto;
-            padding: 12mm 16mm 18mm; /* Slightly reduced to give more room for title */
+            padding: 12mm 16mm 18mm;
             background: var(--ivory);
             border: 3px double var(--gold);
             box-shadow: 0 0 25px rgba(212,175,55,0.2);
@@ -81,7 +81,7 @@
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-            margin-bottom: 8mm; /* Reduced to prevent cut-off */
+            margin-bottom: 8mm;
         }
 
         .logo-container {
@@ -106,7 +106,7 @@
 
         .main-title {
             font-family: 'Cinzel', serif;
-            font-size: 26pt; /* Slightly smaller to prevent wrapping/cut */
+            font-size: 26pt;
             font-weight: 700;
             color: var(--gold);
             text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.5);
@@ -168,6 +168,7 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 11pt;
+            margin-bottom: 12px;
         }
 
         th, td {
@@ -183,6 +184,11 @@
             text-align: right;
             padding-right: 8px;
             font-weight: 600;
+        }
+
+        .passing-col {
+            background: #e8fff8;
+            font-weight: bold;
         }
 
         .totals {
@@ -268,11 +274,11 @@
         <label for="studentName">طالبہ کا نام</label>
         <input type="text" id="studentName">
 
-        <label for="fatherName">والد کا نام</label>
-        <input type="text" id="fatherName">
+        <label for="guardianName">ولدیت / زوجیت</label>
+        <input type="text" id="guardianName">
 
-        <label for="className">درجہ / کورس ایئر</label>
-        <input type="text" id="className">
+        <label for="department">شعبہ</label>
+        <input type="text" id="department">
 
         <label for="rollNo">رول نمبر</label>
         <input type="text" id="rollNo">
@@ -312,8 +318,8 @@
             <p>امتحانی سال: <span id="r_examYear"></span></p>
             <p>تعلیمی سال: <span id="r_academicYear"></span></p>
             <p>طالبہ کا نام: <span id="r_studentName"></span></p>
-            <p>والد کا نام: <span id="r_fatherName"></span></p>
-            <p>درجہ: <span id="r_className"></span></p>
+            <p>ولدیت / زوجیت: <span id="r_guardianName"></span></p>
+            <p>شعبہ: <span id="r_department"></span></p>
             <p>رول نمبر: <span id="r_rollNo"></span></p>
         </div>
 
@@ -321,31 +327,43 @@
             <div class="block">
                 <h3>مضامین تقریری</h3>
                 <table>
-                    <tr><th>مضمون</th><th>کل نمبر</th><th>حاصل کردہ</th></tr>
-                    <tr><td class="subject-col">ناظرہ قرآن</td><td>100</td><td id="r_nazra"></td></tr>
-                    <tr><td class="subject-col">حفظ سورہ</td><td>100</td><td id="r_hifzSurah"></td></tr>
-                    <tr><td class="subject-col">حفظ حدیث</td><td>100</td><td id="r_hifzHadith"></td></tr>
-                    <tr><td class="subject-col">مسنون دعائیں</td><td>100</td><td id="r_masnoonDua"></td></tr>
-                    <tr><td class="subject-col">عقائد</td><td>10</td><td id="r_aqaedTaq"></td></tr>
-                    <tr><td class="subject-col">اردو تقریری</td><td>50</td><td id="r_urduTaq"></td></tr>
+                    <tr>
+                        <th>مضمون</th>
+                        <th>مجوزہ نمبر</th>
+                        <th>ادنی کامیاب نمبر</th>
+                        <th>حاصل کردہ</th>
+                    </tr>
+                    <tr><td class="subject-col">ناظرہ قرآن</td><td>100</td><td>40</td><td id="r_nazra"></td></tr>
+                    <tr><td class="subject-col">حفظ سورہ</td><td>100</td><td>40</td><td id="r_hifzSurah"></td></tr>
+                    <tr><td class="subject-col">حفظ حدیث</td><td>100</td><td>40</td><td id="r_hifzHadith"></td></tr>
+                    <tr><td class="subject-col">مسنون دعائیں</td><td>100</td><td>40</td><td id="r_masnoonDua"></td></tr>
+                    <tr><td class="subject-col">عقائد</td><td>10</td><td>4</td><td id="r_aqaedTaq"></td></tr>
+                    <tr><td class="subject-col">اردو تقریری</td><td>50</td><td>20</td><td id="r_urduTaq"></td></tr>
+                    <tr><td colspan="2" style="font-weight:bold; background:#fffacd;">مجموعہ تقریری</td><td>460</td><td id="r_taqririTotal"></td></tr>
                 </table>
             </div>
             <div class="block">
                 <h3>مضامین تحریری</h3>
                 <table>
-                    <tr><th>مضمون</th><th>کل نمبر</th><th>حاصل کردہ</th></tr>
-                    <tr><td class="subject-col">عقائد اسلام</td><td>90</td><td id="r_aqaedIslam"></td></tr>
-                    <tr><td class="subject-col">مسائل شریعت</td><td>100</td><td id="r_masail"></td></tr>
-                    <tr><td class="subject-col">سیرت النبی ﷺ</td><td>100</td><td id="r_seerat"></td></tr>
-                    <tr><td class="subject-col">اخلاقی تعلیم</td><td>100</td><td id="r_akhlaqi"></td></tr>
-                    <tr><td class="subject-col">عربی زبان</td><td>100</td><td id="r_arabi"></td></tr>
-                    <tr><td class="subject-col">اردو تحریری</td><td>50</td><td id="r_urduTah"></td></tr>
+                    <tr>
+                        <th>مضمون</th>
+                        <th>مجوزہ نمبر</th>
+                        <th>ادنی کامیاب نمبر</th>
+                        <th>حاصل کردہ</th>
+                    </tr>
+                    <tr><td class="subject-col">عقائد اسلام</td><td>90</td><td>36</td><td id="r_aqaedIslam"></td></tr>
+                    <tr><td class="subject-col">مسائل شریعت</td><td>100</td><td>40</td><td id="r_masail"></td></tr>
+                    <tr><td class="subject-col">سیرت النبی ﷺ</td><td>100</td><td>40</td><td id="r_seerat"></td></tr>
+                    <tr><td class="subject-col">اخلاقی تعلیم</td><td>100</td><td>40</td><td id="r_akhlaqi"></td></tr>
+                    <tr><td class="subject-col">عربی زبان</td><td>100</td><td>40</td><td id="r_arabi"></td></tr>
+                    <tr><td class="subject-col">اردو تحریری</td><td>50</td><td>20</td><td id="r_urduTah"></td></tr>
+                    <tr><td colspan="2" style="font-weight:bold; background:#fffacd;">مجموعہ تحریری</td><td>540</td><td id="r_tahreeriTotal"></td></tr>
                 </table>
             </div>
         </div>
 
         <div class="totals">
-            <p>کل حاصل کردہ نمبر: <span id="r_totalObtained"></span> / 1000</p>
+            <p>کل مجموعہ: <span id="r_grandTotalMax"></span> / <span id="r_grandTotalObtained"></span></p>
             <p>فیصد: <span id="r_percentage"></span>%</p>
             <p class="result">درجہ: <span id="r_grade"></span> | نتیجہ: <span id="r_result"></span></p>
         </div>
@@ -357,7 +375,7 @@
             </div>
             <div class="sig">
                 <div class="sig-line"></div>
-                صدرہ معدریس
+                صدر مدرسہ
             </div>
         </div>
     </div>
@@ -368,7 +386,7 @@
 
     <script>
         function generateReport() {
-            const fields = ['examYear','academicYear','studentName','fatherName','className','rollNo',
+            const fields = ['examYear','academicYear','studentName','guardianName','department','rollNo',
                             'nazra','hifzSurah','hifzHadith','masnoonDua','aqaedTaq','urduTaq',
                             'aqaedIslam','masail','seerat','akhlaqi','arabi','urduTah'];
 
@@ -379,11 +397,11 @@
 
             fields.forEach(f => {
                 const input = document.getElementById(f);
-                const val = ['examYear','academicYear','studentName','fatherName','className','rollNo'].includes(f) 
+                const val = ['examYear','academicYear','studentName','guardianName','department','rollNo'].includes(f) 
                     ? input.value.trim() 
                     : parseFloat(input.value) || 0;
 
-                if (!['examYear','academicYear','studentName','fatherName','className','rollNo'].includes(f)) {
+                if (!['examYear','academicYear','studentName','guardianName','department','rollNo'].includes(f)) {
                     if (val > maxMarks[f]) {
                         alert(`غلط نمبر: "${f}" میں زیادہ سے زیادہ ${maxMarks[f]} ہیں۔`);
                         invalid = true;
@@ -398,8 +416,12 @@
 
             if (invalid) return;
 
-            let totalObtained = Object.values(marks).reduce((a, b) => a + b, 0);
-            let percentage = (totalObtained / 1000 * 100).toFixed(2);
+            let taqririObtained = marks.nazra + marks.hifzSurah + marks.hifzHadith + marks.masnoonDua + marks.aqaedTaq + marks.urduTaq;
+            let tahreeriObtained = marks.aqaedIslam + marks.masail + marks.seerat + marks.akhlaqi + marks.arabi + marks.urduTah;
+            let totalObtained = taqririObtained + tahreeriObtained;
+            let totalMax = 1000;
+            let percentage = (totalObtained / totalMax * 100).toFixed(2);
+
             let grade = percentage >= 90 ? 'A+' :
                         percentage >= 80 ? 'A' :
                         percentage >= 70 ? 'B' :
@@ -407,7 +429,10 @@
                         percentage >= 50 ? 'D' : 'F';
             let result = percentage >= 33 ? 'کامیاب' : 'ناکام';
 
-            document.getElementById('r_totalObtained').textContent = totalObtained;
+            document.getElementById('r_taqririTotal').textContent = taqririObtained;
+            document.getElementById('r_tahreeriTotal').textContent = tahreeriObtained;
+            document.getElementById('r_grandTotalMax').textContent = totalMax;
+            document.getElementById('r_grandTotalObtained').textContent = totalObtained;
             document.getElementById('r_percentage').textContent = percentage;
             document.getElementById('r_grade').textContent = grade;
             document.getElementById('r_result').textContent = result;
@@ -422,7 +447,6 @@
             const element = document.getElementById('report');
             element.style.display = 'block';
 
-            // Extra delay + force reflow
             element.offsetHeight; 
             await new Promise(r => setTimeout(r, 1800));
 
@@ -435,7 +459,6 @@
                 windowWidth: element.scrollWidth,
                 windowHeight: element.scrollHeight,
                 onclone: (clonedDoc) => {
-                    // Ensure no wrapping in cloned doc
                     const titles = clonedDoc.querySelectorAll('.main-title, .sub-title');
                     titles.forEach(t => {
                         t.style.whiteSpace = 'nowrap';
@@ -456,7 +479,7 @@
             const pdfWidth = pdf.internal.pageSize.getWidth();
             const pdfHeight = pdf.internal.pageSize.getHeight();
 
-            let ratio = Math.min(pdfWidth / canvas.width, pdfHeight / canvas.height * 1.02); // Slight overscale tolerance
+            let ratio = Math.min(pdfWidth / canvas.width, pdfHeight / canvas.height * 1.02);
             const imgW = canvas.width * ratio;
             const imgH = canvas.height * ratio;
 
