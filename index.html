@@ -13,7 +13,6 @@
             direction: rtl;
             text-align: right;
             background: linear-gradient(to bottom, #f9f7f2, #e8e2d5);
-            color: #222;
             margin: 0;
             padding: 20px;
         }
@@ -21,142 +20,137 @@
             max-width: 900px;
             margin: auto;
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
         h1 {
             color: #001f3f;
             text-align: center;
-            font-size: 2.6rem;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #001f3f;
-            font-size: 1.5rem;
-            margin: 0 0 30px;
+            font-size: 2.4rem;
+            margin-bottom: 12px;
         }
         .class-buttons {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin: 40px 0;
+            gap: 20px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
         .class-btn {
             background: #001f3f;
             color: white;
-            padding: 16px 32px;
+            padding: 14px 28px;
             border: none;
             border-radius: 10px;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             cursor: pointer;
-            min-width: 220px;
+            min-width: 200px;
         }
-        .class-btn:hover { background: #003366; transform: translateY(-2px); }
+        .class-btn:hover { background: #003366; }
         .form-section { display: none; }
-        label { display: block; margin: 14px 0 5px; font-weight: 700; color: #001f3f; }
+        label { display: block; margin: 12px 0 4px; font-weight: 700; color: #001f3f; }
         input {
             width: 100%;
-            padding: 10px 12px;
-            margin-bottom: 10px;
+            padding: 9px 11px;
+            margin-bottom: 8px;
             border: 1px solid #d0c8b0;
             border-radius: 6px;
-            font-size: 1.05rem;
+            font-size: 1rem;
             direction: rtl;
         }
         .submit-btn {
             background: #001f3f;
             color: white;
-            padding: 14px;
+            padding: 12px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             width: 100%;
-            margin-top: 25px;
+            margin-top: 20px;
         }
         .report {
             display: none;
             width: 210mm;
             min-height: 297mm;
-            margin: 30px auto;
-            padding: 12mm 16mm 18mm;
+            margin: 20px auto;
+            padding: 10mm 14mm 16mm;
             background: #fdfaf2;
-            border: 4px solid #d4af37;
-            border-radius: 12px;
+            border: 3px solid #d4af37;
+            border-radius: 10px;
             box-sizing: border-box;
-            font-size: 13pt;
-            color: #111;
-            box-shadow: 0 0 20px rgba(212,175,55,0.2);
+            font-size: 12pt;
         }
         .bismillah {
             text-align: center;
-            font-size: 18pt;
-            font-weight: 700;
-            color: #006400; /* Dark green for traditional Bismillah look */
-            margin-bottom: 8px;
-            font-family: 'Traditional Arabic', 'Noto Nastaliq Urdu', serif;
+            font-size: 13pt;
+            color: #001f3f;
+            margin-bottom: 4px;
         }
         .title-header {
             background: #001f3f;
             color: #d4af37;
-            padding: 16px;
-            border-radius: 12px;
+            padding: 10px;
+            border-radius: 8px;
             text-align: center;
-            margin-bottom: 10mm;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+            margin-bottom: 8mm;
         }
         .main-title {
-            font-size: 38pt;
+            font-size: 28pt;
             font-weight: 800;
             margin: 0;
-            line-height: 1.05;
+            line-height: 1;
         }
         .address {
-            font-size: 13pt;
-            margin: 10px 0 0;
-            opacity: 0.95;
+            font-size: 11pt;
+            margin: 6px 0 0;
         }
         .exam-title {
-            font-size: 22pt;
-            margin: 12px 0 0;
+            font-size: 18pt;
+            margin: 8px 0 0;
             font-weight: 700;
+        }
+        .logo {
+            max-width: 80px;
+            height: auto;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6mm;
         }
         .info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px 16px;
-            margin-bottom: 16px;
-            font-size: 12.5pt;
+            gap: 6px 12px;
+            margin-bottom: 12px;
+            font-size: 12pt;
         }
         .info p {
             margin: 0;
-            padding: 5px 8px;
-            background: rgba(212,175,55,0.05);
+            padding: 4px 6px;
+            background: rgba(212,175,55,0.04);
             border-radius: 4px;
-            border: 1px solid rgba(212,175,55,0.15);
+            border: 1px solid rgba(212,175,55,0.12);
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 11pt;
-            margin-bottom: 10px;
+            font-size: 10.5pt;
+            margin-bottom: 8px;
         }
         th, td {
             border: 1px solid #b0a070;
-            padding: 6px 5px;
+            padding: 5px 4px;
             text-align: center;
         }
-        th {
-            background: #001f3f;
-            color: white;
-        }
+        th { background: #001f3f; color: white; }
         .subject-col {
             background: #fff8e8;
             text-align: right;
-            padding-right: 8px;
+            padding-right: 6px;
             font-weight: 600;
         }
         .passing-col {
@@ -164,39 +158,33 @@
             font-weight: bold;
         }
         .totals {
-            margin-top: 16px;
-            padding: 12px;
-            background: rgba(212,175,55,0.06);
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(212,175,55,0.05);
             border: 1px solid #d4af37;
-            border-radius: 7px;
-            font-size: 13pt;
+            border-radius: 6px;
+            font-size: 12.5pt;
             font-weight: bold;
             text-align: center;
         }
         .signatures {
-            margin-top: 35px;
+            margin-top: 30px;
             display: flex;
             justify-content: space-between;
-            font-size: 12pt;
+            font-size: 11.5pt;
             font-weight: bold;
             color: #001f3f;
         }
-        .sig {
-            width: 45%;
-            text-align: center;
-        }
-        .sig-line {
-            border-top: 1.5px solid #d4af37;
-            margin: 30px 0 6px;
-        }
+        .sig { width: 45%; text-align: center; }
+        .sig-line { border-top: 1.5px solid #d4af37; margin: 25px 0 4px; }
         #pdfButton {
             text-align: center;
             margin: 30px 0;
             display: none;
         }
         #pdfButton button {
-            padding: 12px 45px;
-            font-size: 1.15rem;
+            padding: 12px 40px;
+            font-size: 1.1rem;
             background: #d4af37;
             color: #001f3f;
             border: none;
@@ -212,7 +200,7 @@
                 width: 100%;
                 height: auto;
                 margin: 0;
-                padding: 12mm 16mm 18mm;
+                padding: 10mm 14mm 16mm;
                 border: none;
                 background: white !important;
             }
@@ -232,7 +220,6 @@
         <button class="class-btn" onclick="showForm('duwwam')">سالانہ دوم</button>
     </div>
 
-    <!-- ناظرہ قرآن Form -->
     <div id="nazira" class="form-section">
         <label>امتحانی سال</label><input type="text" id="n_examYear" value="2026">
         <label>تعلیمی سال</label><input type="text" id="n_academicYear" value="2025-26">
@@ -241,7 +228,7 @@
         <label>شعبہ</label><input type="text" id="n_department">
         <label>رول نمبر</label><input type="text" id="n_rollNo">
 
-        <h2 style="text-align:center; color:#001f3f; margin:25px 0 12px;">مضامین تقریری</h2>
+        <h2 style="text-align:center; color:#001f3f;">مضامین تقریری</h2>
         <label>ناظرہ قرآن (100)</label><input type="number" id="n_nazra" min="0">
         <label>حفظ سورہ (100)</label><input type="number" id="n_hifzSurah" min="0">
         <label>آداب و دعائیں (100)</label><input type="number" id="n_adaabDua" min="0">
@@ -251,7 +238,6 @@
         <button class="submit-btn" onclick="generateReport('nazira')">رپورٹ تیار کریں</button>
     </div>
 
-    <!-- سالانہ اول Form -->
     <div id="awwal" class="form-section">
         <label>امتحانی سال</label><input type="text" id="a_examYear" value="2026">
         <label>تعلیمی سال</label><input type="text" id="a_academicYear" value="2025-26">
@@ -260,7 +246,7 @@
         <label>شعبہ</label><input type="text" id="a_department">
         <label>رول نمبر</label><input type="text" id="a_rollNo">
 
-        <h2 style="text-align:center; color:#001f3f; margin:25px 0 12px;">مضامین تقریری</h2>
+        <h2 style="text-align:center; color:#001f3f;">مضامین تقریری</h2>
         <label>ناظرہ قرآن (100)</label><input type="number" id="a_nazra" min="0">
         <label>حفظ سورہ (100)</label><input type="number" id="a_hifzSurah" min="0">
         <label>حفظ حدیث (100)</label><input type="number" id="a_hifzHadith" min="0">
@@ -268,7 +254,7 @@
         <label>عقائد (اسماء حسنیٰ) (10)</label><input type="number" id="a_aqaedAsma" min="0">
         <label>اردو تقریری (50)</label><input type="number" id="a_urduTaq" min="0">
 
-        <h2 style="text-align:center; color:#001f3f; margin:25px 0 12px;">مضامین تحریری</h2>
+        <h2 style="text-align:center; color:#001f3f;">مضامین تحریری</h2>
         <label>عقائد اسلام (90)</label><input type="number" id="a_aqaedIslam" min="0">
         <label>مسائل شریعت (100)</label><input type="number" id="a_masail" min="0">
         <label>سیرت النبی ﷺ (100)</label><input type="number" id="a_seerat" min="0">
@@ -279,7 +265,6 @@
         <button class="submit-btn" onclick="generateReport('awwal')">رپورٹ تیار کریں</button>
     </div>
 
-    <!-- سالانہ دوم Form -->
     <div id="duwwam" class="form-section">
         <label>امتحانی سال</label><input type="text" id="d_examYear" value="2026">
         <label>تعلیمی سال</label><input type="text" id="d_academicYear" value="2025-26">
@@ -288,7 +273,7 @@
         <label>شعبہ</label><input type="text" id="d_department">
         <label>رول نمبر</label><input type="text" id="d_rollNo">
 
-        <h2 style="text-align:center; color:#001f3f; margin:25px 0 12px;">مضامین تقریری</h2>
+        <h2 style="text-align:center; color:#001f3f;">مضامین تقریری</h2>
         <label>ناظرہ قرآن (100)</label><input type="number" id="d_nazra" min="0">
         <label>حفظ سورہ (100)</label><input type="number" id="d_hifzSurah" min="0">
         <label>حفظ حدیث (100)</label><input type="number" id="d_hifzHadith" min="0">
@@ -296,7 +281,7 @@
         <label>عقائد (اسماء حسنیٰ) (10)</label><input type="number" id="d_aqaedAsma" min="0">
         <label>اردو تقریری (50)</label><input type="number" id="d_urduTaq" min="0">
 
-        <h2 style="text-align:center; color:#001f3f; margin:25px 0 12px;">مضامین تحریری</h2>
+        <h2 style="text-align:center; color:#001f3f;">مضامین تحریری</h2>
         <label>عقائد اسلام (90)</label><input type="number" id="d_aqaedIslam" min="0">
         <label>مسائل شریعت (100)</label><input type="number" id="d_masail" min="0">
         <label>سیرت النبی ﷺ (100)</label><input type="number" id="d_seerat" min="0">
@@ -311,17 +296,14 @@
     <div id="report" class="report"></div>
 
     <div id="pdfButton" style="display:none; text-align:center; margin:30px 0;">
-        <button onclick="downloadPDF()">PDF ڈاؤن لوڈ کریں</button>
+        <button onclick="downloadPDF()">پی ڈی ایف ڈاؤن لوڈ کریں</button>
     </div>
 </div>
 
 <script>
-    let currentClass = '';
-
     function showForm(classType) {
         document.querySelectorAll('.form-section').forEach(s => s.style.display = 'none');
         document.getElementById(classType).style.display = 'block';
-        currentClass = classType;
         document.getElementById('report').style.display = 'none';
         document.getElementById('pdfButton').style.display = 'none';
     }
@@ -330,12 +312,12 @@
         const prefix = classType === 'nazira' ? 'n_' :
                        classType === 'awwal' ? 'a_' : 'd_';
 
-        const examYear = document.getElementById(prefix + 'examYear').value.trim() || '—';
-        const academicYear = document.getElementById(prefix + 'academicYear').value.trim() || '—';
-        const studentName = document.getElementById(prefix + 'studentName').value.trim() || '—';
-        const guardianName = document.getElementById(prefix + 'guardianName').value.trim() || '—';
-        const department = document.getElementById(prefix + 'department').value.trim() || '—';
-        const rollNo = document.getElementById(prefix + 'rollNo').value.trim() || '—';
+        const examYear     = document.getElementById(prefix + 'examYear')?.value.trim()     || '—';
+        const academicYear = document.getElementById(prefix + 'academicYear')?.value.trim() || '—';
+        const studentName  = document.getElementById(prefix + 'studentName')?.value.trim()  || '—';
+        const guardianName = document.getElementById(prefix + 'guardianName')?.value.trim() || '—';
+        const department   = document.getElementById(prefix + 'department')?.value.trim()   || '—';
+        const rollNo       = document.getElementById(prefix + 'rollNo')?.value.trim()       || '—';
 
         let taqririSubjects = [];
         let tahreeriSubjects = [];
@@ -391,12 +373,12 @@
 
         let invalid = false;
         let taqririObtained = 0;
-        let tahreeriObtained = 0;
+        tahreeriObtained = 0;
 
         taqririSubjects.forEach(s => {
             let val = parseFloat(document.getElementById(prefix + s.id)?.value) || 0;
             if (val > s.max) {
-                alert(`غلط نمبر: "${s.name}" میں (زیادہ سے زیادہ ${s.max})`);
+                alert(`غلط نمبر درج کیا گیا ہے "${s.name}" میں`);
                 invalid = true;
             }
             taqririObtained += val;
@@ -405,7 +387,7 @@
         tahreeriSubjects.forEach(s => {
             let val = parseFloat(document.getElementById(prefix + s.id)?.value) || 0;
             if (val > s.max) {
-                alert(`غلط نمبر: "${s.name}" میں (زیادہ سے زیادہ ${s.max})`);
+                alert(`غلط نمبر درج کیا گیا ہے "${s.name}" میں`);
                 invalid = true;
             }
             tahreeriObtained += val;
@@ -419,48 +401,43 @@
                       percentage >= 60 ? 'C' : percentage >= 50 ? 'D' : 'F';
         const result = percentage >= 33 ? 'کامیاب' : 'ناکام';
 
-        let taqririRows = taqririSubjects.map(s => `
-            <tr>
-                <td class="subject-col">${s.name}</td>
-                <td>${s.max}</td>
-                <td class="passing-col">${s.pass}</td>
-                <td>${parseFloat(document.getElementById(prefix + s.id)?.value) || 0}</td>
-            </tr>
-        `).join('');
-
-        let tahreeriRows = tahreeriSubjects.map(s => `
-            <tr>
-                <td class="subject-col">${s.name}</td>
-                <td>${s.max}</td>
-                <td class="passing-col">${s.pass}</td>
-                <td>${parseFloat(document.getElementById(prefix + s.id)?.value) || 0}</td>
-            </tr>
-        `).join('');
-
         const reportHTML = `
-            <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+            <div class="bismillah">بسم اللہ الرحمن الرحیم</div>
 
-            <div class="title-header">
-                <div class="main-title">مکتب فاطمہ للبنات</div>
-                <div class="address">اندروں قلعہ، روبرو مسجد جامعہ، مسجد تنگیٹ، ناظرہ قرآن امتحان سال اول</div>
-                <div class="exam-title">نتیجہ امتحان سالانہ</div>
+            <div class="header">
+                <div style="flex:1;"></div>
+                <div class="title-header">
+                    <div class="main-title">مکتب فاطمہ للبنات</div>
+                    <div class="address">اندروں قلعہ، روبرو جامع مسجد، تنگیٹ خمّم</div>
+                    <div class="exam-title">نتیجہ امتحان سالانہ</div>
+                </div>
+                <div class="logo-container">
+                    <img src="logo.png" alt="لوگو" class="logo">
+                </div>
             </div>
 
             <div class="info">
-                <p>امتحانی سال: ${examYear}</p>
                 <p>تعلیمی سال: ${academicYear}</p>
+                <p>امتحانی سال: ${examYear}</p>
                 <p>طالبہ کا نام: ${studentName}</p>
                 <p>ولدیت / زوجیت: ${guardianName}</p>
                 <p>شعبہ: ${department}</p>
                 <p>رول نمبر: ${rollNo}</p>
             </div>
 
-            <div style="display:flex; justify-content:space-between; gap:16px; margin:20px 0;">
+            <div style="display:flex; justify-content:space-between; gap:16px; margin:16px 0;">
                 <div style="flex:1;">
-                    <h3 style="text-align:center; background:#001f3f; color:white; padding:10px; margin:0; border-radius:6px 6px 0 0;">مضامین تقریری</h3>
+                    <h3 style="text-align:center; background:#001f3f; color:white; padding:8px; margin:0; border-radius:6px 6px 0 0;">مضامین تقریری</h3>
                     <table>
                         <tr><th>مضمون</th><th>مجوزہ نمبر</th><th>ادنی کامیاب نمبر</th><th>حاصل کردہ</th></tr>
-                        ${taqririRows}
+                        ${taqririSubjects.map(s => `
+                            <tr>
+                                <td class="subject-col">${s.name}</td>
+                                <td>${s.max}</td>
+                                <td class="passing-col">${s.pass}</td>
+                                <td>${parseFloat(document.getElementById(prefix + s.id)?.value) || 0}</td>
+                            </tr>
+                        `).join('')}
                         <tr style="font-weight:bold; background:#fffacd;">
                             <td colspan="2">مجموعہ تقریری</td>
                             <td>${taqririSubjects.reduce((sum, s) => sum + s.max, 0)}</td>
@@ -468,11 +445,19 @@
                         </tr>
                     </table>
                 </div>
+
                 <div style="flex:1;">
-                    <h3 style="text-align:center; background:#001f3f; color:white; padding:10px; margin:0; border-radius:6px 6px 0 0;">مضامین تحریری</h3>
+                    <h3 style="text-align:center; background:#001f3f; color:white; padding:8px; margin:0; border-radius:6px 6px 0 0;">مضامین تحریری</h3>
                     <table>
                         <tr><th>مضمون</th><th>مجوزہ نمبر</th><th>ادنی کامیاب نمبر</th><th>حاصل کردہ</th></tr>
-                        ${tahreeriRows}
+                        ${tahreeriSubjects.map(s => `
+                            <tr>
+                                <td class="subject-col">${s.name}</td>
+                                <td>${s.max}</td>
+                                <td class="passing-col">${s.pass}</td>
+                                <td>${parseFloat(document.getElementById(prefix + s.id)?.value) || 0}</td>
+                            </tr>
+                        `).join('')}
                         <tr style="font-weight:bold; background:#fffacd;">
                             <td colspan="2">مجموعہ تحریری</td>
                             <td>${tahreeriSubjects.reduce((sum, s) => sum + s.max, 0)}</td>
@@ -485,7 +470,7 @@
             <div class="totals">
                 <p>کل مجموعہ: ${totalObtained} / ${totalMax}</p>
                 <p>فیصد: ${percentage}%</p>
-                <p style="font-size:16pt; margin-top:12px;">درجہ: ${grade} | نتیجہ: ${result}</p>
+                <p class="result">درجہ: ${grade} | نتیجہ: ${result}</p>
             </div>
 
             <div class="signatures">
@@ -509,13 +494,7 @@
 
     async function downloadPDF() {
         const element = document.getElementById('report');
-        if (!element || element.style.display !== 'block') {
-            alert("پہلے رپورٹ تیار کریں!");
-            return;
-        }
-
-        await new Promise(r => setTimeout(r, 1800));
-
+        await new Promise(r => setTimeout(r, 1500));
         const canvas = await html2canvas(element, {
             scale: 1.5,
             useCORS: true,
@@ -523,18 +502,12 @@
             logging: false,
             scrollY: -window.scrollY
         });
-
         const imgData = canvas.toDataURL('image/jpeg', 0.92);
         const { jsPDF } = window.jspdf;
         const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-
         const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight();
-        const ratio = Math.min(pdfWidth / canvas.width, pdfHeight / canvas.height);
-        const imgW = canvas.width * ratio;
-        const imgH = canvas.height * ratio;
-
-        pdf.addImage(imgData, 'JPEG', 0, 0, imgW, imgH);
+        const ratio = pdfWidth / canvas.width;
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, canvas.height * ratio);
         pdf.save('رپورٹ_کارڈ.pdf');
     }
 </script>
