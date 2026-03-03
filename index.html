@@ -96,9 +96,12 @@
             text-align: center;
             margin-bottom: 7mm;
             position: relative;
+            display: inline-block;
+            width: auto;
+            max-width: 100%;
         }
         .main-title {
-            font-size: 22pt;
+            font-size: 20pt;
             font-weight: 800;
             margin: 0;
             line-height: 1.1;
@@ -108,8 +111,8 @@
             margin: 5px 0 0;
         }
         .exam-title {
-            font-size: 14pt;
-            margin: 6px 0 0;
+            font-size: 13pt;
+            margin: 5px 0 0;
             font-weight: 700;
         }
         .logo {
@@ -236,6 +239,7 @@
         <button class="submit-btn" onclick="generateReport('nazira')">رپورٹ تیار کریں</button>
     </div>
 
+    <!-- سالانہ اول -->
     <div id="awwal" class="form-section">
         <label>امتحانی سال</label><input type="text" id="a_examYear" value="2026">
         <label>تعلیمی سال</label><input type="text" id="a_academicYear" value="2025-26">
@@ -263,6 +267,7 @@
         <button class="submit-btn" onclick="generateReport('awwal')">رپورٹ تیار کریں</button>
     </div>
 
+    <!-- سالانہ دوم -->
     <div id="duwwam" class="form-section">
         <label>امتحانی سال</label><input type="text" id="d_examYear" value="2026">
         <label>تعلیمی سال</label><input type="text" id="d_academicYear" value="2025-26">
@@ -349,13 +354,13 @@
             <div class="bismillah">بسم اللہ الرحمن الرحیم</div>
 
             <div class="header">
-                <div class="logo-container">
-                    <img src="logo.png" alt="لوگو" class="logo">
-                </div>
                 <div class="title-header">
                     <div class="main-title">مکتب فاطمہ للبنات</div>
                     <div class="address">اندروں قلعہ، روبرو جامع مسجد، تنگیٹ خمّم</div>
                     <div class="exam-title">نتیجہ امتحان سالانہ</div>
+                    <div class="logo">
+                        <img src="logo.png" alt="لوگو" class="logo">
+                    </div>
                 </div>
             </div>
 
